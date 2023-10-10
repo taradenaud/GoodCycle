@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <string name="app_name">group40_apk</string>
+    <string name="app_opening_welcome">Welcome to our cycling app!</string>
+    <string name="email_address_hint">Email</string>
+    <string name="firstName_hint">First Name</string>
+    <string name="lastName_hint">Last Name</string>
+    <string name="login_button">Log In</string>
+    <string name="login_button_name">Log In</string>
+    <string name="login_title">Log In</string>
+    <string name="opening_app_name">GRP 40 - Cycling app</string>
+    <string name="password_hint">Password</string>
+    <string name="signUp_page_title">Sign Up</string>
+    <string name="signup_button">Sign Up</string>
+    <string name="username_hint">Username</string>
+    <style name="Base.Theme.SEG2105Grp40" parent="Theme.Material3.DayNight.NoActionBar">
+        
+        
+    </style>
+    <style name="Theme.SEG2105Grp40" parent="Base.Theme.SEG2105Grp40"/>
+</resources>
