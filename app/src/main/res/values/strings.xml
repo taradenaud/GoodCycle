@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">SEG cycling app</string>
+    <string name="app_opening_welcome">Welcome to our cycling app!</string>
+    <string name="opening_app_name">Grp 40 cycling app!</string>
+    <string name="login_button_name">Log in</string>
+    <string name="signup_button">Sign up</string>
+</resources>
