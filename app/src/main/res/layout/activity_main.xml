@@ -43,6 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:onClick="loginbuttonClick"
                 android:text="@string/login_button_name" />
         </LinearLayout>
 
