@@ -23,10 +23,6 @@ public class MainActivity extends AppCompatActivity {
         DatabaseReference newUserEmailRef = database.getReference("users/test/email");
         DatabaseReference newUserPasswordRef = database.getReference("users/test/password");
 
-        newUserEmailRef.setValue("test123@gmail.com");
-        newUserPasswordRef.setValue("123password");
-        newUserRoleRef.setValue("Customer");
-
         Button login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(new View.OnClickListener() {
             @Override
