@@ -11,7 +11,7 @@ public class role extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_role);
+        setContentView(R.layout.role);
 
         Intent intent = getIntent();
         if (intent != null) {

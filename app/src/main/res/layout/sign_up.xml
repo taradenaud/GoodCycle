@@ -7,8 +7,8 @@
     tools:context=".SignUp">
 
     <LinearLayout
-        android:id="@+id/signup"
-        android:layout_width="0dp"
+        android:id="@+id/login"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="vertical"
@@ -16,31 +16,61 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5">
+        app:layout_constraintVertical_bias="0.52">
 
         <EditText
             android:id="@+id/LoginEmail"
             android:layout_width="match_parent"
-            android:layout_height="82dp"
+            android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
             android:ems="10"
+            android:hint="@string/LoginEmail"
             android:inputType="textEmailAddress"
-            tools:text="Email: " />
+            android:padding="10dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
 
         <EditText
             android:id="@+id/username"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
             android:ems="10"
+            android:hint="@string/Usernametext"
             android:inputType="text"
-            android:text="@string/Usernametext" />
+            android:padding="10dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
 
         <EditText
             android:id="@+id/LoginPassword"
             android:layout_width="match_parent"
-            android:layout_height="73dp"
+            android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
             android:ems="10"
+            android:hint="@string/LoginPassword"
             android:inputType="textPassword"
-            tools:text="Password:" />
+            android:padding="10dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
+
+        <Spinner
+            android:id="@+id/user_selection_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
+            android:hint="@string/UserTypeSpin"
+            android:padding="10dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="16dp" />
 
         <com.google.android.material.chip.ChipGroup
             android:layout_width="match_parent"
@@ -65,7 +95,7 @@
             android:id="@+id/btn_reg"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register" />
+            android:text="@string/RegisterText" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

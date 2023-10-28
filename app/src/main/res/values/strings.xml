@@ -49,4 +49,13 @@
     <string name="LoginPassword">Password:</string>
     <string name="RoleTEXT" />
     <string name="Usernametext">Username:</string>
+    <string name="login_text">Log In</string>
+    <string name="UserTypeSpin">Select User Type</string>
+    <string name="RegisterText">Register</string>
+
+    <string-array name="User_selection" >
+        <item>Admin</item>
+        <item>Club Owner</item>
+        <item>Participant</item>
+    </string-array>
 </resources>
