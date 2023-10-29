@@ -23,7 +23,7 @@
             android:id="@+id/app_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/VarelaRound_Regular"
+            android:fontFamily="@font/varela_round_regular"
             android:gravity="center"
             android:text="Cycling App "
             android:textSize="48sp" />
@@ -32,7 +32,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="@font/NotoSerif_Regular"
+            android:fontFamily="@font/noto_serif_regular"
             android:gravity="center"
             android:text="Welcome" />
 

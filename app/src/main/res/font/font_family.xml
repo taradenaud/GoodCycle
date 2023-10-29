@@ -3,22 +3,22 @@
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/NotoSerif_Bold" />
+        android:font="@font/noto_serif_bold" />
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/NotoSerif_BoldItalic" />
+        android:font="@font/noto_serif_bold_italic" />
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/NotoSerif_Italic" />
+        android:font="@font/noto_serif_italic" />
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/NotoSerif_Regular" />
+        android:font="@font/noto_serif_regular" />
     <font
         android:fontStyle="normal"
         android:fontWeight="400"
-        android:font="@font/VarelaRound_Regular" />
+        android:font="@font/varela_round_regular" />
 
 </font-family>

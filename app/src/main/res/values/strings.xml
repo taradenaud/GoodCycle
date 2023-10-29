@@ -52,6 +52,11 @@
     <string name="login_text">Log In</string>
     <string name="UserTypeSpin">Select User Type</string>
     <string name="RegisterText">Register</string>
+    <string name="Welcome_text">Welcome! You are now logged in as </string>
+    <string name="Admin_title">Admin</string>
+    <string name="ClubOwner_title">Club Owner</string>
+    <string name="Participant_title">Participant</string>
+
 
     <string-array name="User_selection" >
         <item>Admin</item>
