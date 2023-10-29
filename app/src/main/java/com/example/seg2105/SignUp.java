@@ -29,7 +29,7 @@ public class SignUp extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         spinner.setAdapter(adapter);
-
+        // end of spinner stuff
 
 
         Button reg = (Button) findViewById(R.id.btn_reg);
