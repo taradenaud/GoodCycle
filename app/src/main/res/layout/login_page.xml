@@ -19,12 +19,12 @@
         app:layout_constraintVertical_bias="0.5">
 
         <EditText
-            android:id="@+id/LoginEmail"
+            android:id="@+id/LoginUsername"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/text_border_1"
             android:ems="10"
-            android:hint="@string/LoginEmail"
+            android:hint="@string/LoginUsername"
             android:inputType="textEmailAddress"
             android:padding="10dp" />
 

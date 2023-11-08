@@ -2,11 +2,9 @@ package com.example.seg2105;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,9 +12,6 @@ import android.widget.Spinner;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class SignUp extends AppCompatActivity {
 
@@ -39,7 +34,7 @@ public class SignUp extends AppCompatActivity {
 
 
         Button reg = (Button) findViewById(R.id.btn_reg);
-        EditText emailText = findViewById(R.id.LoginEmail);
+        EditText emailText = findViewById(R.id.LoginUsername);
         EditText UserName = findViewById(R.id.username);
         EditText pwdText = findViewById(R.id.LoginPassword);
 

@@ -45,7 +45,7 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="LoginEmail">Email:</string>
+    <string name="something">Email:</string>
     <string name="LoginPassword">Password:</string>
     <string name="RoleTEXT" />
     <string name="Usernametext">Username:</string>
@@ -56,6 +56,7 @@
     <string name="Admin_title">Admin</string>
     <string name="ClubOwner_title">Club Owner</string>
     <string name="Participant_title">Participant</string>
+    <string name="LoginUsername">Username:</string>
 
 
     <string-array name="User_selection">
