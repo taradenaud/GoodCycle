@@ -16,12 +16,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        String username = "new";
         setContentView(R.layout.activity_main);
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference newUserRoleRef = database.getReference("users/test/role");
-        DatabaseReference newUserEmailRef = database.getReference("users/test/email");
-        DatabaseReference newUserPasswordRef = database.getReference("users/test/password");
+        DatabaseReference newUserRoleRef = database.getReference("users/"+username+"/role");
+        DatabaseReference newUserEmailRef = database.getReference("users/"+username+"/email");
+        DatabaseReference newUserPasswordRef = database.getReference("users/"+username+"/password");
+
+        newUserRoleRef.setValue("changed");
 
         Button login = (Button) findViewById(R.id.login_button);
         login.setOnClickListener(new View.OnClickListener() {
