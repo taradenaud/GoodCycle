@@ -26,7 +26,8 @@
             android:fontFamily="@font/varela_round_regular"
             android:gravity="center"
             android:text="Cycling App "
-            android:textSize="48sp" />
+            android:textSize="48sp"
+            android:textColor="@color/black"/>
 
         <TextView
             android:id="@+id/textView"
@@ -45,13 +46,15 @@
             android:id="@+id/login_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Log In" />
+            android:text="Log In"
+            android:backgroundTint="@color/cambridge_blue"/>
 
         <Button
             android:id="@+id/sign_up_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sign Up" />
+            android:text="Sign Up"
+            android:backgroundTint="@color/cambridge_blue"/>
     </LinearLayout>
 
 
