@@ -21,15 +21,27 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/ManageUsrs"
+            android:id="@+id/ManageUsrsbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Manage Users" />
 
         <Button
-            android:id="@+id/Events"
+            android:id="@+id/EventTypesbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Types" />
+
+        <Button
+            android:id="@+id/Eventsbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Events" />
+
+        <Button
+            android:id="@+id/AddEventbtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Add Events" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

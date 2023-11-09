@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminEventTypes">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/NewTypeText"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:ems="10"
+                android:inputType="text"
+                android:text="@string/AddType" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/AddTypeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:contentDescription="Add Event Type"
+                app:srcCompat="@android:drawable/ic_menu_add" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="176dp"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/currentName"
+                android:layout_width="match_parent"
+                android:layout_height="59dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="@string/selectedType" />
+
+            <EditText
+                android:id="@+id/newname"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:ems="10"
+                android:inputType="text"
+                android:text="Name" />
+
+            <Button
+                android:id="@+id/renametype"
+                android:layout_width="match_parent"
+                android:layout_height="61dp"
+                android:text="@string/renamebutton" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/TypeList"
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:choiceMode="singleChoice"
+            android:listSelector="@android:color/holo_blue_light" />
+
+        <Button
+            android:id="@+id/DeleteType"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="@string/deletetype" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

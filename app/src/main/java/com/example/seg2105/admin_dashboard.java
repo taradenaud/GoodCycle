@@ -6,13 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class admin_dashboard extends AppCompatActivity {
 
@@ -21,7 +14,7 @@ public class admin_dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_dashboard);
 
-        Button ManageUsrs = (Button) findViewById(R.id.ManageUsrs);
+        Button ManageUsrs = (Button) findViewById(R.id.ManageUsrsbtn);
 
         ManageUsrs.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -30,12 +23,12 @@ public class admin_dashboard extends AppCompatActivity {
             }
         });
 
-        Button events = (Button) findViewById(R.id.Events);
+        Button events = (Button) findViewById(R.id.EventTypesbtn);
 
         events.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( admin_dashboard.this, AdminEvents.class));
+                startActivity(new Intent( admin_dashboard.this, AdminEventTypes.class));
             }
         });
 

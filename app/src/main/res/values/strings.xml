@@ -66,4 +66,10 @@
     <string name="title_activity_admin_user_management">AdminUserManagement</string>
     <string name="deleteusr">Delete User</string>
     <string name="selectedValue">Selected user:</string>
+    <string name="deletetype">Delete Event Type</string>
+    <string name="selectedType">Selected Type</string>
+    <string name="NewType">New Type to add</string>
+    <string name="renamebutton">Rename Type</string>
+    <string name="selectedusr">Selected User</string>
+    <string name="AddType">Add New Event Type</string>
 </resources>
