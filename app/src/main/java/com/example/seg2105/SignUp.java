@@ -38,12 +38,12 @@ public class SignUp extends AppCompatActivity {
         EditText UserName = findViewById(R.id.username);
         EditText pwdText = findViewById(R.id.LoginPassword);
 
-        String role;
         Spinner userRoleSelect = (Spinner) findViewById(R.id.user_selection_spinner);
-        role = userRoleSelect.getSelectedItem().toString();
+
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String role = userRoleSelect.getSelectedItem().toString();
                 String username = String.valueOf(UserName.getText());
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference newUserNameRef = database.getReference("users/"+username+"/username");
@@ -52,6 +52,7 @@ public class SignUp extends AppCompatActivity {
                 DatabaseReference newUserPasswordRef = database.getReference("users/"+username+"/password");
 
                 newUserEmailRef.setValue(username);
+                newUserNameRef.setValue(username);
                 newUserEmailRef.setValue(String.valueOf(emailText.getText()));
                 newUserPasswordRef.setValue(String.valueOf(pwdText.getText()));
                 newUserRoleRef.setValue(role);

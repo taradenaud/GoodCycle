@@ -60,7 +60,6 @@
 
 
     <string-array name="User_selection">
-        <item>Admin</item>
         <item>Club Owner</item>
         <item>Participant</item>
     </string-array>

@@ -30,5 +30,14 @@ public class admin_dashboard extends AppCompatActivity {
             }
         });
 
+        Button events = (Button) findViewById(R.id.Events);
+
+        events.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( admin_dashboard.this, AdminEvents.class));
+            }
+        });
+
     }
 }

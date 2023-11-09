@@ -68,8 +68,10 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/text_border_1"
+            android:entries="@array/User_selection"
             android:hint="@string/UserTypeSpin"
-            android:padding="10dp" />
+            android:padding="10dp"
+            android:spinnerMode="dropdown" />
 
         <Space
             android:layout_width="match_parent"
