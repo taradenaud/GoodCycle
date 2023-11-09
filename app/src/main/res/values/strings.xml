@@ -64,4 +64,7 @@
         <item>Club Owner</item>
         <item>Participant</item>
     </string-array>
+    <string name="title_activity_admin_user_management">AdminUserManagement</string>
+    <string name="deleteusr">Delete User</string>
+    <string name="selectedValue">Selected user:</string>
 </resources>

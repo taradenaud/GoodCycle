@@ -21,19 +21,19 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/ManageUsrs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Manage Users" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/EventTypes"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Event Types" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/Events"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Events" />
