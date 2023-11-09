@@ -43,5 +43,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add Events" />
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Back" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -30,7 +30,7 @@
         <ListView
             android:id="@+id/UsersListView"
             android:layout_width="match_parent"
-            android:layout_height="574dp"
+            android:layout_height="474dp"
             android:choiceMode="singleChoice"
             android:listSelector="@android:color/holo_blue_light" />
 
@@ -39,6 +39,11 @@
             android:layout_width="match_parent"
             android:layout_height="67dp"
             android:text="@string/deleteusr" />
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:text="Back" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

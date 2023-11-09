@@ -109,6 +109,14 @@ public class AdminManageUsers extends AppCompatActivity {
             }
         });
 
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // This will navigate back to the previous page
+            }
+        });
+
 
     }
 
