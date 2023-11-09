@@ -1,18 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#ff0c0c0f</color>
-    <color name="white">#fff2f2f5</color>
-
-    <color name="cool_gray_d3">#ff33323f</color>
-    <color name="cool_gray_d1">#ff4d4b5f</color>
-    <color name="cool_gray">#ff817e9f</color>
-    <color name="cool_gray_l1">#ffd9d8e2</color>
-
-    <color name="cambridge_blue_d1">#ff324d3e</color>
-    <color name="cambridge_blue">#ff7fc29b</color>
-    <color name="cambridge_blue_l1">#ffd8ece1</color>
-
-    <color name="light_green_d1">#ff485f37</color>
-    <color name="light_green">#ffb5ef8a</color>
-    <color name="light_green_l1">#fff0fbe7</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
 </resources>

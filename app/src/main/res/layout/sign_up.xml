@@ -63,13 +63,6 @@
             android:layout_width="match_parent"
             android:layout_height="16dp" />
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/varela_round_regular"
-            android:hint="@string/UserTypeSpin" />
-
         <Spinner
             android:id="@+id/user_selection_spinner"
             android:layout_width="match_parent"
