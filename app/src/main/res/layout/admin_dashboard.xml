@@ -45,7 +45,7 @@
         app:layout_constraintVertical_bias="1.0">
 
         <Button
-            android:id="@+id/ManageUsrs"
+            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/cool_gray_d1"
@@ -53,7 +53,7 @@
             android:text="Manage Users" />
 
         <Button
-            android:id="@+id/EventTypes"
+            android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/cool_gray_d1"
@@ -61,7 +61,7 @@
             android:text="Event Types" />
 
         <Button
-            android:id="@+id/Events"
+            android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/cool_gray_d1"

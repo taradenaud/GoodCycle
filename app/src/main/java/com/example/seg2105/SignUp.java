@@ -46,12 +46,10 @@ public class SignUp extends AppCompatActivity {
             public void onClick(View v) {
                 String username = String.valueOf(UserName.getText());
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference newUserNameRef = database.getReference("users/"+username+"/username");
                 DatabaseReference newUserRoleRef = database.getReference("users/"+username+"/role");
                 DatabaseReference newUserEmailRef = database.getReference("users/"+username+"/email");
                 DatabaseReference newUserPasswordRef = database.getReference("users/"+username+"/password");
 
-                newUserEmailRef.setValue(username);
                 newUserEmailRef.setValue(String.valueOf(emailText.getText()));
                 newUserPasswordRef.setValue(String.valueOf(pwdText.getText()));
                 newUserRoleRef.setValue(role);
