@@ -29,22 +29,23 @@ public class AdminEventTypes extends AppCompatActivity {
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference ref;
-    private String NewInputtedName;
+    private String CurrentName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_event_types);
 
-        ref = FirebaseDatabase.getInstance().getReference("events/types");
+        ref = FirebaseDatabase.getInstance().getReference("eventtypes");
         adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ArrayList);
         TypesList = findViewById(R.id.TypeList);
         TypesList.setAdapter(adapter);
 
         EditText selectedtype = findViewById(R.id.currentName);//Selection identifier at top of page
-        ref.addChildEventListener(new ChildEventListener() {
+        ref.addChildEventListener(new ChildEventListener() { //Bugs with display right now after modification (rename) Alter on Child changed
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Called when loading list
+                ArrayList.remove()
                 String type = snapshot.child("name").getValue(String.class);
                 ArrayList.add(type);
                 adapter.notifyDataSetChanged();
@@ -52,9 +53,6 @@ public class AdminEventTypes extends AppCompatActivity {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Refresh list as something was changed
-                if(ArrayList.size() > 0){
-                    ArrayList.clear();
-                }
                 String type = snapshot.child("name").getValue(String.class);
                 ArrayList.add(type);
                 adapter.notifyDataSetChanged();
@@ -85,8 +83,8 @@ public class AdminEventTypes extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String eventtype =  parent.getItemAtPosition(position).toString();
-                NewInputtedName = eventtype;
-                selectedtype.setText(NewInputtedName);
+                CurrentName = eventtype;
+                selectedtype.setText(CurrentName);
             }
         });
 
@@ -94,7 +92,7 @@ public class AdminEventTypes extends AppCompatActivity {
         deleteType.setOnClickListener(new View.OnClickListener() { //delete button functionality
             @Override
             public void onClick(View v) {
-                ref.child(NewInputtedName).removeValue();
+                ref.child(CurrentName).removeValue();
             }
         });
 
@@ -103,9 +101,13 @@ public class AdminEventTypes extends AppCompatActivity {
         renameType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference renameref = database.getReference("events/types/"+ NewInputtedName);
-                String updatedName = String.valueOf(newname.getText());
-                renameref.child("name").setValue(updatedName);
+                for(int i =0; i<ArrayList.size(); i++){
+                    if(ArrayList.get(i).equals(CurrentName)){
+                        DatabaseReference renameref = database.getReference("eventtypes/"+ "type"+(i+1));
+                        String updatedName = String.valueOf(newname.getText());
+                        renameref.child("name").setValue(updatedName);
+                    }
+                }
             }
         });
 
@@ -116,7 +118,7 @@ public class AdminEventTypes extends AppCompatActivity {
             public void onClick(View v) {
                 EditText newtype = (EditText) findViewById(R.id.NewTypeText);
                 String name = String.valueOf(newtype.getText());
-                DatabaseReference newTypeNameRef = database.getReference("events/types/"+name+"/name");
+                DatabaseReference newTypeNameRef = database.getReference("eventtypes/"+"type"+ (ArrayList.size()+1)+"/name");
                 newTypeNameRef.setValue(name);
                 newtype.setText("Add New Event Type");
             }
