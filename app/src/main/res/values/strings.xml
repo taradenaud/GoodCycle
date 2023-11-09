@@ -50,7 +50,7 @@
     <string name="RoleTEXT" />
     <string name="Usernametext">Username:</string>
     <string name="login_text">Log In</string>
-    <string name="UserTypeSpin">Select User Type</string>
+    <string name="UserTypeSpin">Select User Type:</string>
     <string name="RegisterText">Register</string>
     <string name="Welcome_text">Welcome! You are now logged in as </string>
     <string name="Admin_title">Admin</string>
