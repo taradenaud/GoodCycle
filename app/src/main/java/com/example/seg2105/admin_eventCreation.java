@@ -13,7 +13,7 @@ public class admin_eventCreation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.admin_event_creation);
 
-        Button backButton = findViewById(R.id.backButton);
+        Button backButton = findViewById(R.id.backbutton);
 
         backButton.setOnClickListener(new View.OnClickListener() {
             @Override

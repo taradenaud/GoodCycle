@@ -50,7 +50,7 @@ public class admin_dashboard extends AppCompatActivity {
 
         Button addEvent = (Button) findViewById(R.id.AddEventbtn);
 
-        events.setOnClickListener(new View.OnClickListener() {
+        addEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent( admin_dashboard.this, admin_eventCreation.class));

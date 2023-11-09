@@ -45,7 +45,6 @@ public class AdminEventTypes extends AppCompatActivity {
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Called when loading list
-                ArrayList.remove()
                 String type = snapshot.child("name").getValue(String.class);
                 ArrayList.add(type);
                 adapter.notifyDataSetChanged();
@@ -53,6 +52,11 @@ public class AdminEventTypes extends AppCompatActivity {
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Refresh list as something was changed
+                for(int i =0; i<ArrayList.size(); i++){
+                    if(ArrayList.get(i).equals(CurrentName)){
+                        ArrayList.remove(i);
+                    }
+                }
                 String type = snapshot.child("name").getValue(String.class);
                 ArrayList.add(type);
                 adapter.notifyDataSetChanged();

@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <EditText
-            android:id="@+id/selectedusrtext"
+            android:id="@+id/selecteduser"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
