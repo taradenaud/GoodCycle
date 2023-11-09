@@ -40,6 +40,14 @@ public class SignUp extends AppCompatActivity {
 
         Spinner userRoleSelect = (Spinner) findViewById(R.id.user_selection_spinner);
 
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // This will navigate back to the previous page
+            }
+        });
+
         reg.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

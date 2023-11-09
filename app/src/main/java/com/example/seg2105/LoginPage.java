@@ -29,6 +29,14 @@ public class LoginPage extends AppCompatActivity {
         EditText usernameText = findViewById(R.id.LoginUsername);
         EditText pwdText = findViewById(R.id.LoginPassword);
 
+        Button backButton = findViewById(R.id.backButton);
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // This will navigate back to the previous page
+            }
+        });
+
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
