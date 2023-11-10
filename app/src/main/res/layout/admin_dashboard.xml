@@ -7,46 +7,66 @@
     tools:context=".admin_dashboard">
 
     <LinearLayout
-        android:layout_width="313dp"
-        android:layout_height="436dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="126dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="169dp"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center|center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.5">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_to" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/admin_dash"
+            android:textSize="34sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="190dp" />
 
         <Button
             android:id="@+id/ManageUsrsbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Manage Users" />
+            android:text="@string/manage_usr" />
 
         <Button
             android:id="@+id/EventTypesbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Event Types" />
+            android:text="@string/create_event" />
 
         <Button
             android:id="@+id/Eventsbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Events" />
+            android:text="@string/events" />
 
         <Button
             android:id="@+id/AddEventbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add Events" />
+            android:text="@string/add_event" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="150dp" />
+
         <Button
             android:id="@+id/backButton"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Back" />
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+
+            android:text="@string/back" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

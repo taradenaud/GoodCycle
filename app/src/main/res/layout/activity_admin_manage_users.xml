@@ -7,17 +7,15 @@
     tools:context=".AdminManageUsers">
 
     <LinearLayout
-        android:layout_width="409dp"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
         android:orientation="vertical"
+        android:gravity="center|center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
         <EditText
             android:id="@+id/selecteduser"
@@ -25,7 +23,7 @@
             android:layout_height="60dp"
             android:ems="10"
             android:inputType="none"
-            android:text="@string/selectedusr" />
+            android:hint="@string/selectedusr" />
 
         <ListView
             android:id="@+id/UsersListView"
@@ -37,13 +35,15 @@
         <Button
             android:id="@+id/DeleteUsr"
             android:layout_width="match_parent"
-            android:layout_height="67dp"
-            android:text="@string/deleteusr" />
+            android:layout_height="60dp"
+            android:hint="@string/deleteusr"
+            android:textColorHint="@color/white"/>
         <Button
             android:id="@+id/backButton"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Back" />
+            android:layout_height="60dp"
+            android:hint="@string/back"
+            android:textColorHint="@color/white"/>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

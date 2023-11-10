@@ -7,93 +7,171 @@
     tools:context=".admin_eventCreation">
 
     <LinearLayout
-        android:layout_width="415dp"
-        android:layout_height="729dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="2dp"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        tools:layout_editor_absoluteX="20dp">
 
-        <EditText
-            android:id="@+id/eventName"
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Event Name" />
+            android:layout_height="20dp" />
 
-        <EditText
-            android:id="@+id/eventType"
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Event Type" />
+            android:layout_height="60dp"
+            android:fontFamily="@font/varela_round_regular"
+            android:text="@string/create_evnt_text"
+            android:textSize="39dp" />
 
-        <EditText
-            android:id="@+id/region"
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Location" />
+            android:layout_height="60dp" />
 
-        <EditText
-            android:id="@+id/level"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="59dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Difficult Level" />
+            android:layout_height="450dp" >
 
-        <EditText
-            android:id="@+id/pace"
-            android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:ems="10"
-            android:text="Pace" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/RegFee"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Registration Fee" />
 
-        <EditText
-            android:id="@+id/participantlimit"
-            android:layout_width="match_parent"
-            android:layout_height="57dp"
-            android:ems="10"
-            android:inputType="text"
-            android:text="Participant Limit" />
+                <EditText
+                    android:id="@+id/eventName"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/text_border_1"
+                    android:ems="10"
+                    android:hint="@string/event_name"
+                    android:inputType="text"
+                    android:padding="10dp" />
 
-        <EditText
-            android:id="@+id/details"
-            android:layout_width="match_parent"
-            android:layout_height="161dp"
-            android:ems="10"
-            android:gravity="start|top"
-            android:inputType="textMultiLine"
-            android:text="Event Details" />
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <EditText
+                    android:id="@+id/eventType"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/text_border_1"
+                    android:ems="10"
+                    android:hint="@string/event_type"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <EditText
+                    android:id="@+id/region"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/text_border_1"
+                    android:ems="10"
+                    android:hint="@string/location"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <EditText
+                    android:id="@+id/level"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/text_border_1"
+                    android:ems="10"
+                    android:hint="@string/diff_lvl"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <EditText
+                    android:id="@+id/pace"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/text_border_1"
+                    android:ems="10"
+                    android:hint="@string/pace"
+                    android:padding="10dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <EditText
+                    android:id="@+id/RegFee"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/text_border_1"
+                    android:ems="10"
+                    android:hint="@string/reg_fee"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <EditText
+                    android:id="@+id/participantlimit"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:background="@drawable/text_border_1"
+                    android:ems="10"
+                    android:hint="@string/participant_limit"
+                    android:inputType="text"
+                    android:padding="10dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+                <EditText
+                    android:id="@+id/details"
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp"
+                    android:background="@drawable/text_border_1"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/event_details"
+                    android:inputType="textMultiLine"
+                    android:padding="10dp" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp" />
+
+
+            </LinearLayout>
+
+
+        </ScrollView>
 
         <Button
             android:id="@+id/createEventBtn"
             android:layout_width="match_parent"
-            android:layout_height="62dp"
-            android:text="Create Event" />
+            android:layout_height="60dp"
+            android:hint="@string/create_event"
+            android:textColorHint="@color/cool_gray_l1" />
 
         <Button
             android:id="@+id/backbutton"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:text="Button" />
+            android:layout_height="60dp"
+            android:hint="@string/back"
+            android:textColorHint="@color/cool_gray_l1" />
+
+
 
     </LinearLayout>
 

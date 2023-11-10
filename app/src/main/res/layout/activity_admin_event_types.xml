@@ -7,17 +7,15 @@
     tools:context=".AdminEventTypes">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center|center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -31,7 +29,7 @@
                 android:layout_weight="1"
                 android:ems="10"
                 android:inputType="text"
-                android:text="@string/AddType"
+                android:hint="@string/add_new_event_type"
                 android:textSize="16sp" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -55,7 +53,7 @@
                 android:layout_height="59dp"
                 android:ems="10"
                 android:inputType="text"
-                android:text="@string/selectedType"
+                android:hint="@string/selectedType"
                 android:textSize="16sp" />
 
             <EditText
@@ -64,7 +62,7 @@
                 android:layout_height="55dp"
                 android:ems="10"
                 android:inputType="text"
-                android:text="Name"
+                android:hint="@string/name_word"
                 android:textSize="16sp" />
 
             <Button
