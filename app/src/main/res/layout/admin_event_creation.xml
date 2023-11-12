@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".admin_eventCreation">
@@ -9,9 +10,15 @@
     <LinearLayout
         android:layout_width="370dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_marginBottom="52dp"
         android:gravity="center"
         android:orientation="vertical"
-        tools:layout_editor_absoluteX="20dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <Space
             android:layout_width="match_parent"
@@ -25,13 +32,9 @@
             android:text="@string/create_evnt_text"
             android:textSize="39dp" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="60dp" />
-
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="450dp" >
+            android:layout_height="478dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -39,10 +42,14 @@
                 android:orientation="vertical">
 
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
                 <EditText
                     android:id="@+id/eventName"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="55dp"
                     android:background="@drawable/text_border_1"
                     android:ems="10"
                     android:hint="@string/event_name"
@@ -51,26 +58,21 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="10dp" />
 
-                <EditText
+                <Spinner
                     android:id="@+id/eventType"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="@drawable/text_border_1"
-                    android:ems="10"
-                    android:hint="@string/event_type"
-                    android:inputType="text"
-                    android:padding="10dp" />
+                    android:layout_height="49dp" />
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="10dp" />
 
                 <EditText
                     android:id="@+id/region"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="54dp"
                     android:background="@drawable/text_border_1"
                     android:ems="10"
                     android:hint="@string/location"
@@ -79,12 +81,12 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="12dp" />
 
                 <EditText
                     android:id="@+id/level"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="55dp"
                     android:background="@drawable/text_border_1"
                     android:ems="10"
                     android:hint="@string/diff_lvl"
@@ -93,12 +95,12 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="11dp" />
 
                 <EditText
                     android:id="@+id/pace"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="54dp"
                     android:background="@drawable/text_border_1"
                     android:ems="10"
                     android:hint="@string/pace"
@@ -106,12 +108,12 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="11dp" />
 
                 <EditText
                     android:id="@+id/RegFee"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="54dp"
                     android:background="@drawable/text_border_1"
                     android:ems="10"
                     android:hint="@string/reg_fee"
@@ -120,36 +122,17 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="20dp" />
+                    android:layout_height="13dp" />
 
                 <EditText
                     android:id="@+id/participantlimit"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp"
+                    android:layout_height="54dp"
                     android:background="@drawable/text_border_1"
                     android:ems="10"
                     android:hint="@string/participant_limit"
                     android:inputType="text"
                     android:padding="10dp" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp" />
-
-                <EditText
-                    android:id="@+id/details"
-                    android:layout_width="match_parent"
-                    android:layout_height="120dp"
-                    android:background="@drawable/text_border_1"
-                    android:ems="10"
-                    android:gravity="start|top"
-                    android:hint="@string/event_details"
-                    android:inputType="textMultiLine"
-                    android:padding="10dp" />
-
-                <Space
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp" />
 
 
             </LinearLayout>
@@ -170,7 +153,6 @@
             android:layout_height="60dp"
             android:hint="@string/back"
             android:textColorHint="@color/cool_gray_l1" />
-
 
 
     </LinearLayout>

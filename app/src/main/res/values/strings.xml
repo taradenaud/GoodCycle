@@ -63,6 +63,16 @@
         <item>Club Owner</item>
         <item>Participant</item>
     </string-array>
+
+    <string-array name="EventProperties">
+        <item>Type</item>
+        <item>Level</item>
+        <item>Location</item>
+        <item>Pace</item>
+        <item>Registration Fee</item>
+        <item>Participant Limit</item>
+    </string-array>
+
     <string name="title_activity_admin_user_management">AdminUserManagement</string>
     <string name="deleteusr">Delete User</string>
     <string name="selectedValue">Selected User:</string>
@@ -89,6 +99,7 @@
     <string name="events">Events</string>
     <string name="add_event">Add Events</string>
     <string name="back">Back</string>
+    <string name="event_types">Event Types</string>
     <string name="create_event">Create Event</string>
     <string name="create_evnt_text">Create an event!</string>
     <string name="admin_dash">Admin Dashboard</string>

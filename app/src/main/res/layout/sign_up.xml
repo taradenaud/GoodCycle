@@ -29,6 +29,12 @@
             android:inputType="textEmailAddress"
             android:padding="10dp" />
 
+        <TextView
+            android:id="@+id/emailValidation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="16dp" />
@@ -44,6 +50,12 @@
             android:inputType="text"
             android:padding="10dp" />
 
+        <TextView
+            android:id="@+id/UsernameValidation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark" />
+
         <Space
             android:layout_width="match_parent"
             android:layout_height="16dp" />
@@ -58,6 +70,12 @@
             android:hint="@string/LoginPassword"
             android:inputType="textPassword"
             android:padding="10dp" />
+
+        <TextView
+            android:id="@+id/passwordValidation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"

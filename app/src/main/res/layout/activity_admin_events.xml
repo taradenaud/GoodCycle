@@ -21,25 +21,45 @@
             android:id="@+id/SelectedEvent"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
             android:ems="10"
-            android:inputType="none"
-            android:text="@string/selectedusr" />
+            android:hint="Selected Event"
+            android:inputType="text" />
 
         <ListView
             android:id="@+id/EventView"
             android:layout_width="match_parent"
-            android:layout_height="199dp">
+            android:layout_height="242dp">
 
         </ListView>
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/propertyselect"
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="50dp"
+            android:entries="@array/event_properties_entries" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="12dp" />
+
+        <EditText
+            android:id="@+id/detailValue"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:ems="10"
+            android:hint="New Value"
+            android:inputType="text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="56dp" />
+
+        <Button
+            android:id="@+id/editvalueBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Change Detail" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -47,10 +67,10 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/deleteEventBtn"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
-                android:text="Button" />
+                android:text="Delete Event" />
 
             <Button
                 android:id="@+id/backButton"

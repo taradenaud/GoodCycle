@@ -96,7 +96,12 @@ public class AdminEventTypes extends AppCompatActivity {
         deleteType.setOnClickListener(new View.OnClickListener() { //delete button functionality
             @Override
             public void onClick(View v) {
-                ref.child(CurrentName).removeValue();
+                for(int i =0; i<ArrayList.size(); i++){
+                    if(ArrayList.get(i).equals(CurrentName)){
+                        DatabaseReference renameref = database.getReference("eventtypes/"+ "type"+(i+1));
+                        renameref.removeValue();
+                    }
+                }
             }
         });
 

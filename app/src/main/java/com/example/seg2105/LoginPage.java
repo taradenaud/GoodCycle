@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -36,7 +37,7 @@ public class LoginPage extends AppCompatActivity {
                 finish(); // This will navigate back to the previous page
             }
         });
-
+        TextView logininvalid = findViewById(R.id.checkLoginText);
         LogIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,6 +53,9 @@ public class LoginPage extends AppCompatActivity {
                         String value = dataSnapshot.getValue(String.class);
                         if(password.equals(value)){
                             setflag();
+                        }
+                        else{
+                            logininvalid.setText("Username or Password is Incorrect");
                         }
                     }
 
