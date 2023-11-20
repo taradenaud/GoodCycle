@@ -78,8 +78,8 @@ public class LoginPage extends AppCompatActivity {
                             else if(value.equals("Participant")){
                                 startActivity(new Intent( LoginPage.this, welcome_participant.class));
                             }
-                            else if(value.equals("Club")){
-                                startActivity(new Intent( LoginPage.this, welcome_clubOwner.class));
+                            else if(value.equals("Club Owner")){
+                                startActivity(new Intent( LoginPage.this, clubOwner_dashboard.class));
                             }
                         }
 

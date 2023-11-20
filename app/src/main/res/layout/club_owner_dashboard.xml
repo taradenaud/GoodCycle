@@ -6,4 +6,58 @@
     android:layout_height="match_parent"
     tools:context=".clubOwner_dashboard">
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/welcome_to" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Club Owner Dashboard"
+            android:textSize="34sp" />
+
+        <Button
+            android:id="@+id/buttonEventCreation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Event Creation" />
+
+        <Button
+            android:id="@+id/buttonRoutePlanning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Route Planning" />
+
+        <Button
+            android:id="@+id/buttonRegistrationManagement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Registration Management" />
+
+        <Button
+            android:id="@+id/buttonResultsAndAwards"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Results and Awards" />
+        <Button
+            android:id="@+id/backButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:text="@string/back" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

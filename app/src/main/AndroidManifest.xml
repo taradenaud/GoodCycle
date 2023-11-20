@@ -30,7 +30,7 @@
             android:label="@string/title_activity_admin_user_management"
             android:theme="@style/Theme.SEG2105" />
         <activity
-            android:name=".admin_eventCreation"
+            android:name=".eventCreation"
             android:exported="false" />
         <activity
             android:name=".participant_dashboard"

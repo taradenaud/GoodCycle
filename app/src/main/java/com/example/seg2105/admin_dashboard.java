@@ -53,7 +53,7 @@ public class admin_dashboard extends AppCompatActivity {
         addEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( admin_dashboard.this, admin_eventCreation.class));
+                startActivity(new Intent( admin_dashboard.this, eventCreation.class));
             }
         });
 
