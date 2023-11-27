@@ -17,14 +17,16 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class eventCreation extends AppCompatActivity {
 
     private ListView TypesList;
-    private ArrayList<String> ArrayList = new ArrayList<String>();
-    private ArrayAdapter adapter;
+
+    private List<String> types = new ArrayList<String>();
     private DatabaseReference ref;
     private String Selected;
 
@@ -35,34 +37,21 @@ public class eventCreation extends AppCompatActivity {
 
         Button backButton = findViewById(R.id.backbutton);
         Spinner eventType = (Spinner) findViewById(R.id.eventType);
-        eventType.setAdapter(adapter);
-        ref = FirebaseDatabase.getInstance().getReference("eventtypes");
-        ref.addChildEventListener(new ChildEventListener() {
+        ref = FirebaseDatabase.getInstance().getReference();
+        ref.child("eventtypes").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
-            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                String type = snapshot.child("name").getValue(String.class);
-                ArrayList.add(type);
-                adapter.notifyDataSetChanged();
-            }
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-            @Override
-            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                if(ArrayList.size() > 0){
-                    ArrayList.clear();
+                for(DataSnapshot eventtypes : snapshot.getChildren()){
+                    String eventtype = eventtypes.child("name").getValue(String.class);
+                    if (eventtype!=null){
+                        types.add(eventtype);
+                    }
                 }
-                String type = snapshot.child("eventtype").getValue(String.class);
-                ArrayList.add(type);
-                adapter.notifyDataSetChanged();
-            }
 
-            @Override
-            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                adapter.notifyDataSetChanged();
+                ArrayAdapter<String> adapter = new ArrayAdapter<String>(eventCreation.this, android.R.layout.simple_spinner_item , types);
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                eventType.setAdapter(adapter);
             }
 
             @Override
@@ -77,13 +66,6 @@ public class eventCreation extends AppCompatActivity {
                 finish(); // This will navigate back to the previous page
             }
         });
-        int size = ArrayList.size();
-        String[] types = new String[size];
-        for (int i= 0; i<size; i++){
-            types[i] = ArrayList.get(i);
-        }
-        adapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item , types);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
         Button CreateEvent = (Button) findViewById(R.id.createEventBtn);
         EditText eventName = (EditText) findViewById(R.id.eventName);
@@ -95,13 +77,8 @@ public class eventCreation extends AppCompatActivity {
         CreateEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int count = 0;
-                for (int i = 0; i< ArrayList.size(); i++){
-                    if( eventType.getSelectedItem().equals(ArrayList.get(i))){
-                        count = i;
-                    }
-                }
-                String eT = String.valueOf(ArrayList.get(count));
+
+                String eT = types.get(eventType.getSelectedItemPosition()).toString();
                 String eN = String.valueOf(eventName.getText());
                 String loc = String.valueOf(location.getText());
                 String DL = String.valueOf(DifficultyLevel.getText());

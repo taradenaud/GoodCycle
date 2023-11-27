@@ -29,6 +29,8 @@ public class AdminEventTypes extends AppCompatActivity {
 
     private FirebaseDatabase database = FirebaseDatabase.getInstance();
     private DatabaseReference ref;
+
+    private int TypeCount = 1;
     private String CurrentName;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,11 @@ public class AdminEventTypes extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Called when loading list
                 String type = snapshot.child("name").getValue(String.class);
+                String count = snapshot.getKey();
+                int newCount = Integer.valueOf(count.replace("type", "").trim());
+                if(newCount >= TypeCount){
+                    TypeCount = newCount;
+                }
                 ArrayList.add(type);
                 adapter.notifyDataSetChanged();
             }
@@ -127,7 +134,7 @@ public class AdminEventTypes extends AppCompatActivity {
             public void onClick(View v) {
                 EditText newtype = (EditText) findViewById(R.id.NewTypeText);
                 String name = String.valueOf(newtype.getText());
-                DatabaseReference newTypeNameRef = database.getReference("eventtypes/"+"type"+ (ArrayList.size()+1)+"/name");
+                DatabaseReference newTypeNameRef = database.getReference("eventtypes/"+"type"+ (TypeCount+1)+"/name");
                 newTypeNameRef.setValue(name);
                 newtype.setText("Add New Event Type");
             }
