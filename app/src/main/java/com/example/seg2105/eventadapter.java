@@ -29,11 +29,11 @@ public class eventadapter extends ArrayAdapter<eventlistitem> {
             holder = new EventListItemHolder();
             holder.name = row.findViewById(R.id.name);  // Replace with the actual ID of your TextView for the name
             holder.type = row.findViewById(R.id.type);  // Replace with the actual ID of your TextView for the type
-            holder.location = row.findViewById(R.id.location);  // Replace with the actual ID of your TextView for the location
+            holder.location = row.findViewById(R.id.results);  // Replace with the actual ID of your TextView for the location
             holder.level = row.findViewById(R.id.difflevel);  // Replace with the actual ID of your TextView for the level
-            holder.pace = row.findViewById(R.id.racepace);  // Replace with the actual ID of your TextView for the pace
-            holder.participantLimit = row.findViewById(R.id.partlimit);  // Replace with the actual ID of your TextView for participant limit
-            holder.regfee = row.findViewById(R.id.regfee);  // Replace with the actual ID of your TextView for the registration fee
+            holder.pace = row.findViewById(R.id.eventnametv);  // Replace with the actual ID of your TextView for the pace
+            holder.participantLimit = row.findViewById(R.id.resultsText);  // Replace with the actual ID of your TextView for participant limit
+            holder.regfee = row.findViewById(R.id.AwardDetails);  // Replace with the actual ID of your TextView for the registration fee
 
             row.setTag(holder);
         } else {

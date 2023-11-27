@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".club_award_dashboard">
+    tools:context=".ClubAwardDashboard">
 
     <LinearLayout
         android:layout_width="0dp"
@@ -26,8 +26,17 @@
             android:text="Club Awards Dashboard"
             android:textAppearance="?attr/textAppearanceHeadline6" />
 
+        <EditText
+            android:id="@+id/SelectedEvent"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
+            android:ems="10"
+            android:hint="Selected Event"
+            android:inputType="text" />
+
         <ListView
-            android:id="@+id/eventsListView"
+            android:id="@+id/awardListView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
@@ -37,7 +46,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="8dp" />
+            android:layout_height="wrap_content" />
 
         <EditText
             android:id="@+id/resultsEditText"

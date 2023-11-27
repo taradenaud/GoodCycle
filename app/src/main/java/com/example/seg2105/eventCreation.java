@@ -85,6 +85,10 @@ public class eventCreation extends AppCompatActivity {
                 String p = String.valueOf(pace.getText());
                 String rF = String.valueOf(regFee.getText());
                 String Pl = String.valueOf(participantLimit.getText());
+                String aN = "";
+                String a = "";
+                String r = "";
+
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference eventName = database.getReference("events/"+eN+"/name");
@@ -94,6 +98,9 @@ public class eventCreation extends AppCompatActivity {
                 DatabaseReference pace = database.getReference("events/"+eN+"/pace");
                 DatabaseReference regFee = database.getReference("events/"+eN+"/registrationFee");
                 DatabaseReference participantLimit = database.getReference("events/"+eN+"/participantLimit");
+                DatabaseReference awardName = database.getReference("");
+                DatabaseReference awardDetails = database.getReference("");
+                DatabaseReference results = database.getReference("");
 
                 eventName.setValue(eN);
                 eventType.setValue(eT);

@@ -41,7 +41,7 @@ public class clubOwner_dashboard extends AppCompatActivity {
         ResAndAwards.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( clubOwner_dashboard.this, eventCreation.class));
+                startActivity(new Intent( clubOwner_dashboard.this, ClubAwardDashboard.class));
             }
         });
         Button ProfileMngmnt = (Button) findViewById(R.id.buttonProfilemngmnt);

@@ -32,6 +32,8 @@
             android:exported="false"
             android:label="@string/title_activity_admin_user_management"
             android:theme="@style/Theme.SEG2105" />
+        <activity android:name=".ClubAwardDashboard"
+            android:exported="false" />
         <activity
             android:name=".eventCreation"
             android:exported="false" />

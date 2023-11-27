@@ -105,6 +105,6 @@
             android:id="@+id/buttonBack"
             android:layout_width="match_parent"
             android:layout_height="65dp"
-            android:text="Button" />
+            android:text="Back" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

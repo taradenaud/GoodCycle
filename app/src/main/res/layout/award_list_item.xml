@@ -27,7 +27,6 @@
                 android:id="@+id/name"
                 android:layout_width="180dp"
                 android:layout_height="match_parent"
-                android:text="fun run"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -50,7 +49,7 @@
                 android:id="@+id/results"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Location"
+                android:text="Results"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
 
@@ -66,23 +65,23 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/type"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:text="Type"
+                android:text="Award"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
             <TextView
-                android:id="@+id/difflevel"
+                android:id="@+id/awardNameEditText"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Level: 5"
+                android:text=""
                 android:textAlignment="viewEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small" />
         </LinearLayout>
@@ -92,7 +91,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Registration Fee: 1000"
+            android:text=""
             android:textAlignment="viewStart"
             android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
