@@ -63,6 +63,7 @@
                 <Spinner
                     android:id="@+id/eventType"
                     android:layout_width="match_parent"
+                    android:background="@drawable/text_border_1"
                     android:layout_height="49dp" />
 
                 <Space

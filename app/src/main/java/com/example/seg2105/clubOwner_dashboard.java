@@ -22,5 +22,42 @@ public class clubOwner_dashboard extends AppCompatActivity {
                 startActivity(new Intent( clubOwner_dashboard.this, eventCreation.class));
             }
         });
+
+        Button RoutePlanning = (Button) findViewById(R.id.buttonRoutePlanning);
+        RoutePlanning.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( clubOwner_dashboard.this, eventCreation.class));
+            }
+        });
+        Button RegManagement = (Button) findViewById(R.id.buttonRegistrationManagement);
+        RegManagement.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( clubOwner_dashboard.this, eventCreation.class));
+            }
+        });
+        Button ResAndAwards = (Button) findViewById(R.id.buttonResultsAndAwards);
+        ResAndAwards.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( clubOwner_dashboard.this, eventCreation.class));
+            }
+        });
+        Button ProfileMngmnt = (Button) findViewById(R.id.buttonProfilemngmnt);
+        ProfileMngmnt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( clubOwner_dashboard.this, ClubProfileEditor.class));
+            }
+        });
+
+        Button back = (Button) findViewById(R.id.backButton);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // This will navigate back to the previous page
+            }
+        });
     }
 }

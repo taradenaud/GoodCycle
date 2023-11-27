@@ -18,6 +18,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class LoginPage extends AppCompatActivity {
     private static boolean flag = false;
+    public static String Username;
     private static void setflag(){
         flag = true;
     }
@@ -42,6 +43,7 @@ public class LoginPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String username = String.valueOf(usernameText.getText());
+                Username = username;
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
                 DatabaseReference ref = database.getReference("users/"+username+"/password");
                 String password = String.valueOf(pwdText.getText());

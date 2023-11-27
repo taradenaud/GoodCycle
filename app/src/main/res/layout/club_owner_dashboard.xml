@@ -8,14 +8,16 @@
 
 
     <LinearLayout
+        android:id="@+id/linearLayout2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:gravity="center"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
         <TextView
             android:id="@+id/textView8"
             android:layout_width="match_parent"
@@ -52,6 +54,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Results and Awards" />
+
         <Button
             android:id="@+id/backButton"
             android:layout_width="match_parent"
@@ -60,4 +63,14 @@
             android:text="@string/back" />
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonProfilemngmnt"
+        android:layout_width="113dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="280dp"
+        android:layout_marginBottom="128dp"
+        android:text="Edit Profile"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

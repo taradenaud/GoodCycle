@@ -4,123 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUp">
+    tools:context=".ClubProfileEditor">
 
     <LinearLayout
-        android:id="@+id/login"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.52">
-
-        <EditText
-            android:id="@+id/LoginUsername"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/text_border_1"
-            android:ems="10"
-            android:fontFamily="@font/varela_round_regular"
-            android:hint="@string/something"
-            android:inputType="textEmailAddress"
-            android:padding="10dp" />
-
-        <TextView
-            android:id="@+id/emailValidation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_dark" />
+        app:layout_constraintTop_toTopOf="parent">
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="59dp" />
 
         <EditText
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/text_border_1"
-            android:ems="10"
-            android:fontFamily="@font/varela_round_regular"
-            android:hint="@string/Usernametext"
-            android:inputType="text"
-            android:padding="10dp" />
-
-        <TextView
-            android:id="@+id/UsernameValidation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_dark" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <EditText
-            android:id="@+id/LoginPassword"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/text_border_1"
-            android:ems="10"
-            android:fontFamily="@font/varela_round_regular"
-            android:hint="@string/LoginPassword"
-            android:inputType="textPassword"
-            android:padding="10dp" />
-
-        <TextView
-            android:id="@+id/passwordValidation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textColor="@android:color/holo_red_dark" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="16dp" />
-
-        <Spinner
-            android:id="@+id/user_selection_spinner"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/text_border_1"
-            android:entries="@array/User_selection"
-            android:hint="@string/UserTypeSpin"
-            android:padding="10dp"
-            android:spinnerMode="dropdown" />
-
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="27dp" />
-
-        <EditText
-            android:id="@+id/clubName"
+            android:id="@+id/ClubName"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/text_border_1"
             android:ems="10"
             android:fontFamily="@font/varela_round_regular"
             android:hint="Club Name"
-            android:inputType="text"
-            android:padding="10dp"
-            android:visibility="invisible" />
+            android:padding="10dp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="21dp" />
 
-        <Button
-            android:id="@+id/btn_reg"
+        <EditText
+            android:id="@+id/InstagramLink"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
+            android:ems="10"
+            android:fontFamily="@font/varela_round_regular"
+            android:padding="10dp"
+            android:hint="Instagram Link" />
+
+        <TextView
+            android:id="@+id/Instatextval"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/RegisterText" />
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:text="Back" />
+            android:textColor="@android:color/holo_red_dark" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp" />
+
+        <EditText
+            android:id="@+id/ContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
+            android:ems="10"
+            android:fontFamily="@font/varela_round_regular"
+            android:padding="10dp"
+            android:hint="Phone Number" />
+
+        <TextView
+            android:id="@+id/ContactNumVal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="26dp" />
+
+        <EditText
+            android:id="@+id/ContactName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@drawable/text_border_1"
+            android:ems="10"
+            android:fontFamily="@font/varela_round_regular"
+            android:padding="10dp"
+            android:hint="Contact Name" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="30dp" />
+
+        <Button
+            android:id="@+id/buttonSave"
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:text="Save Profile Information" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <Button
+            android:id="@+id/buttonBack"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:text="Button" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

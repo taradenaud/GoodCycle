@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
@@ -48,8 +49,27 @@ public class SignUp extends AppCompatActivity {
         TextView emailTextval = findViewById(R.id.emailValidation);
         TextView UserNameval =  findViewById(R.id.UsernameValidation);
         TextView pwdTextval =  findViewById(R.id.passwordValidation);
+        TextView clubName = findViewById(R.id.clubName);
 
         Spinner userRoleSelect = (Spinner) findViewById(R.id.user_selection_spinner);
+
+        userRoleSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                String selectedItem = parent.getItemAtPosition(position).toString();
+                if(selectedItem.equals("Club Owner")){
+                    clubName.setVisibility(View.VISIBLE);
+                }
+                else{
+                    clubName.setVisibility(View.INVISIBLE);
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         Button backButton = findViewById(R.id.backButton);
         backButton.setOnClickListener(new View.OnClickListener() {
@@ -66,11 +86,11 @@ public class SignUp extends AppCompatActivity {
                 String role = userRoleSelect.getSelectedItem().toString();
                 String username = String.valueOf(UserName.getText());
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-
-                if(String.valueOf(emailText.getText()).trim().length() == 0){
+                all_good = true;
+                if(String.valueOf(emailText.getText()).trim().length() == 0 || !String.valueOf(emailText.getText()).trim().contains("@")){
                     emailTextval.setText("Please Enter A Valid Email");
                     all_good = false;
-                }else{emailTextval.setText("");}
+                } else{emailTextval.setText("");}
                 if(String.valueOf(UserName.getText()).trim().length() == 0){
                     UserNameval.setText("Please Enter A Username");
                     all_good = false;
@@ -111,6 +131,12 @@ public class SignUp extends AppCompatActivity {
                     newUserEmailRef.setValue(String.valueOf(emailText.getText()));
                     newUserPasswordRef.setValue(String.valueOf(pwdText.getText()));
                     newUserRoleRef.setValue(role);
+
+                    if(role.equals("Club Owner")){
+                        String ClubName = String.valueOf(clubName.getText());
+                        DatabaseReference clubdetails = database.getReference("clubs/"+username+"/ClubName");
+                        clubdetails.setValue(ClubName);
+                    }
 
                     startActivity(new Intent(SignUp.this, LoginPage.class));
                 }
