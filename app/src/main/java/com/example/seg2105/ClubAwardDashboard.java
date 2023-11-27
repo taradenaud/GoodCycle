@@ -36,7 +36,6 @@ public class ClubAwardDashboard extends AppCompatActivity {
 
         ref = FirebaseDatabase.getInstance().getReference("awards");
         adapter = new AwardAdapter(this, R.layout.award_list_item, awardList);
-        awardsListView = findViewById(R.id.awardListView);
         awardsListView.setAdapter(adapter);
         EditText selectedEvent = findViewById(R.id.SelectedEvent); //Selection identifier at top of page
 

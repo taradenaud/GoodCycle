@@ -52,12 +52,6 @@
             android:layout_height="wrap_content"
             android:text="@string/events" />
 
-        <Button
-            android:id="@+id/AddEventbtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/add_event" />
-
         <Space
             android:layout_width="match_parent"
             android:layout_height="150dp" />

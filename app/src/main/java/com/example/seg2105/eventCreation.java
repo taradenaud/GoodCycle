@@ -24,11 +24,9 @@ import java.util.List;
 
 public class eventCreation extends AppCompatActivity {
 
-    private ListView TypesList;
 
     private List<String> types = new ArrayList<String>();
     private DatabaseReference ref;
-    private String Selected;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,22 +83,17 @@ public class eventCreation extends AppCompatActivity {
                 String p = String.valueOf(pace.getText());
                 String rF = String.valueOf(regFee.getText());
                 String Pl = String.valueOf(participantLimit.getText());
-                String aN = "";
-                String a = "";
-                String r = "";
 
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference eventName = database.getReference("events/"+eN+"/name");
-                DatabaseReference eventType = database.getReference("events/"+eN+"/eventtype");
-                DatabaseReference Location = database.getReference("events/"+eN+"/location");
-                DatabaseReference Level = database.getReference("events/"+eN+"/level");
-                DatabaseReference pace = database.getReference("events/"+eN+"/pace");
-                DatabaseReference regFee = database.getReference("events/"+eN+"/registrationFee");
-                DatabaseReference participantLimit = database.getReference("events/"+eN+"/participantLimit");
-                DatabaseReference awardName = database.getReference("");
-                DatabaseReference awardDetails = database.getReference("");
-                DatabaseReference results = database.getReference("");
+                DatabaseReference eventName = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/name");
+                DatabaseReference eventType = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/eventtype");
+                DatabaseReference Location = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/location");
+                DatabaseReference Level = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/level");
+                DatabaseReference pace = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/pace");
+                DatabaseReference regFee = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/registrationFee");
+                DatabaseReference participantLimit = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/participantLimit");
+
 
                 eventName.setValue(eN);
                 eventType.setValue(eT);
