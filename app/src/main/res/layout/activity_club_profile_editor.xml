@@ -56,7 +56,7 @@
             android:layout_height="15dp" />
 
         <EditText
-            android:id="@+id/editTextPhone"
+            android:id="@+id/ContactNumber"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
