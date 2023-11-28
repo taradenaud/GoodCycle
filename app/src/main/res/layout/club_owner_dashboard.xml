@@ -29,38 +29,46 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Club Owner Dashboard"
+            android:text="@string/club_owner_dash"
             android:textSize="34sp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="100dp" />
 
         <Button
             android:id="@+id/buttonEventCreation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Event Creation" />
+            android:text="@string/evnt_creation" />
 
         <Button
             android:id="@+id/EventEditButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Manage Events" />
+            android:text="@string/manage_evnts" />
 
         <Button
             android:id="@+id/buttonRoutePlanning"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Route Planning" />
+            android:text="@string/route_planning" />
 
         <Button
             android:id="@+id/buttonRegistrationManagement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Registration Management" />
+            android:text="@string/reg_manag" />
 
         <Button
             android:id="@+id/buttonResultsAndAwards"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Results and Awards" />
+            android:text="@string/rslt_award" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="60dp" />
 
         <Button
             android:id="@+id/backButton"
@@ -75,9 +83,9 @@
         android:id="@+id/buttonProfilemngmnt"
         android:layout_width="113dp"
         android:layout_height="68dp"
-        android:layout_marginStart="280dp"
-        android:layout_marginBottom="104dp"
-        android:text="Edit Profile"
+        android:layout_marginStart="270dp"
+        android:layout_marginBottom="1dp"
+        android:text="@string/edit_profile"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

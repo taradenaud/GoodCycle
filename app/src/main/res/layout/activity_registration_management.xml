@@ -7,9 +7,15 @@
     tools:context=".RegistrationManagement">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center|center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
         <Space
             android:layout_width="match_parent"
@@ -23,15 +29,15 @@
         <TextView
             android:id="@+id/SpacesText"
             android:layout_width="match_parent"
-            android:layout_height="31dp"
+            android:layout_height="35dp"
             android:fontFamily="@font/varela_round_regular"
-            android:text="Spaces left:"
+            android:text="@string/spaces_left"
             android:textSize="20sp" />
 
         <ListView
             android:id="@+id/UserList"
             android:layout_width="match_parent"
-            android:layout_height="485dp"
+            android:layout_height="425dp"
             android:listSelector="@android:color/holo_blue_light"/>
 
         <LinearLayout
@@ -44,20 +50,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Accept" />
+                android:text="@string/accept"
+                 />
 
             <Button
                 android:id="@+id/DenyBtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Deny" />
+                android:text="@string/deny" />
         </LinearLayout>
 
         <Button
             android:id="@+id/BackButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Back" />
+            android:text="@string/back" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

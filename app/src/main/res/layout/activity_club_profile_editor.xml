@@ -7,17 +7,15 @@
     tools:context=".ClubProfileEditor">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:gravity="center|center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
         <Space
             android:layout_width="match_parent"
@@ -30,12 +28,12 @@
             android:background="@drawable/text_border_1"
             android:ems="10"
             android:fontFamily="@font/varela_round_regular"
-            android:hint="Club Name"
+            android:hint="@string/club_name"
             android:padding="10dp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="21dp" />
+            android:layout_height="35dp" />
 
         <EditText
             android:id="@+id/InstagramLink"
@@ -44,38 +42,39 @@
             android:background="@drawable/text_border_1"
             android:ems="10"
             android:fontFamily="@font/varela_round_regular"
-            android:padding="10dp"
-            android:hint="Instagram Link" />
+            android:hint="@string/insta_link"
+            android:padding="10dp" />
 
         <TextView
             android:id="@+id/Instatextval"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="25dp" />
+            android:layout_height="15dp" />
 
         <EditText
-            android:id="@+id/ContactNumber"
+            android:id="@+id/editTextPhone"
             android:layout_width="match_parent"
             android:layout_height="60dp"
-            android:background="@drawable/text_border_1"
             android:ems="10"
+            android:hint="@string/phone_num"
+            android:inputType="phone"
             android:fontFamily="@font/varela_round_regular"
-            android:padding="10dp"
-            android:hint="Phone Number" />
+            android:background="@drawable/text_border_1"
+            android:padding="10dp"/>
 
         <TextView
             android:id="@+id/ContactNumVal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="20dp"
             android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="26dp" />
+            android:layout_height="15dp" />
 
         <EditText
             android:id="@+id/ContactName"
@@ -84,18 +83,18 @@
             android:background="@drawable/text_border_1"
             android:ems="10"
             android:fontFamily="@font/varela_round_regular"
-            android:padding="10dp"
-            android:hint="Contact Name" />
+            android:hint="@string/contact_name"
+            android:padding="10dp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="35dp" />
 
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="match_parent"
-            android:layout_height="63dp"
-            android:text="Save Profile Information" />
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:text="@string/save_profile_info" />
 
         <Space
             android:layout_width="match_parent"
@@ -103,8 +102,8 @@
 
         <Button
             android:id="@+id/buttonBack"
-            android:layout_width="match_parent"
-            android:layout_height="65dp"
-            android:text="Back" />
+            android:layout_width="300dp"
+            android:layout_height="60dp"
+            android:text="@string/back" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

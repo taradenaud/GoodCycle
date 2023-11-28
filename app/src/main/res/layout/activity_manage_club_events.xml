@@ -23,7 +23,7 @@
             android:layout_height="60dp"
             android:background="@drawable/text_border_1"
             android:ems="10"
-            android:hint="Selected Event"
+            android:hint="@string/selected_evnt"
             android:inputType="text" />
 
         <ListView
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:ems="10"
-            android:hint="New Value"
+            android:hint="@string/new_value"
             android:inputType="text" />
 
         <Space
@@ -59,7 +59,7 @@
             android:id="@+id/ClubeditvalueBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Change Detail" />
+            android:text="@string/change_dtl" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -70,13 +70,13 @@
                 android:id="@+id/ClubdeleteEventBtn"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
-                android:text="Delete Event" />
+                android:text="@string/delete_evnt" />
 
             <Button
                 android:id="@+id/backBttn"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
-                android:text="Back" />
+                android:text="@string/back" />
         </LinearLayout>
 
     </LinearLayout>

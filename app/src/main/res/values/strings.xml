@@ -104,5 +104,42 @@
     <string name="create_evnt_text">Create an event!</string>
     <string name="admin_dash">Admin Dashboard</string>
     <string name="welcome_to">Welcome to the</string>
+    <string name="manage_usrs">Manage Users</string>
+    <string name="manage_evnts">Manage Events</string>
+    <string name="evnt_creation">Event Creation</string>
+    <string name="route_planning">Route Planning</string>
+    <string name="reg_manag">Registration Management</string>
+    <string name="rslt_award">Results and Awards</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="type">Type</string>
+    <string name="register">Register</string>
+    <string name="spaces_left">Spaces Left:</string>
+    <string name="accept">Accept</string>
+    <string name="deny">Deny</string>
+    <string name="delete_evnt">Delete Event</string>
+    <string name="change_dtl">Change Detail</string>
+    <string name="award">Award</string>
+    <string name="result">Result</string>
+    <string name="save_r_a">Save Results and Awards</string>
+    <string name="new_value">New Value</string>
+    <string name="selected_evnt">Selected Event</string>
+    <string name="save_profile_info">Save Profile Information</string>
+    <string name="club_name">Club Name</string>
+    <string name="insta_link">Instagram Link</string>
+    <string name="phone_num">Phone Number</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="evnt_result">Event Result</string>
+    <string name="award_name">Award Name</string>
+    <string name="award_details">Award Details</string>
+    <string name="club_owner_dash">Club Owner Dashboard!</string>
+    <string name="sign_up">Sign Up!</string>
+
+
+
+
+
+
+
+
 
 </resources>

@@ -10,15 +10,13 @@
     <LinearLayout
         android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginBottom="52dp"
-        android:gravity="center"
         android:orientation="vertical"
+        android:gravity="center|center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5">
 
         <Space
             android:layout_width="match_parent"
@@ -146,14 +144,14 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="@string/create_event"
-            android:textColorHint="@color/cool_gray_l1" />
+            android:textColorHint="@color/white" />
 
         <Button
             android:id="@+id/backbutton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:hint="@string/back"
-            android:textColorHint="@color/cool_gray_l1" />
+            android:textColorHint="@color/white" />
 
 
     </LinearLayout>
