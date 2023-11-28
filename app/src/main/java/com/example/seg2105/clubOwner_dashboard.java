@@ -22,6 +22,13 @@ public class clubOwner_dashboard extends AppCompatActivity {
                 startActivity(new Intent( clubOwner_dashboard.this, eventCreation.class));
             }
         });
+        Button eventEdit = (Button) findViewById(R.id.EventEditButton);
+        eventEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( clubOwner_dashboard.this, ManageClubEvents.class));
+            }
+        });
 
         Button RoutePlanning = (Button) findViewById(R.id.buttonRoutePlanning);
         RoutePlanning.setOnClickListener(new View.OnClickListener() {
@@ -34,7 +41,7 @@ public class clubOwner_dashboard extends AppCompatActivity {
         RegManagement.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent( clubOwner_dashboard.this, eventCreation.class));
+                startActivity(new Intent( clubOwner_dashboard.this, RegistrationManagement.class));
             }
         });
         Button ResAndAwards = (Button) findViewById(R.id.buttonResultsAndAwards);

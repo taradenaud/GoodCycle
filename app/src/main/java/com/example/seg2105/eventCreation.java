@@ -82,7 +82,7 @@ public class eventCreation extends AppCompatActivity {
                 String DL = String.valueOf(DifficultyLevel.getText());
                 String p = String.valueOf(pace.getText());
                 String rF = String.valueOf(regFee.getText());
-                String Pl = String.valueOf(participantLimit.getText());
+                Integer Pl = Integer.valueOf(String.valueOf(participantLimit.getText()));
 
 
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
