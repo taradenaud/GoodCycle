@@ -23,8 +23,8 @@ import java.util.regex.Pattern;
 public class ClubAwardDashboard extends AppCompatActivity {
 
     private ListView awardsListView;
-    private List<Userlistitem> awardList = new ArrayList<Userlistitem>();
-    private UserAdapter adapter;
+    private List<awardlistitem> awardList = new ArrayList<awardlistitem>();
+    private AwardAdapter adapter;
     private DatabaseReference ref;
 
     private String Selected;
@@ -36,7 +36,7 @@ public class ClubAwardDashboard extends AppCompatActivity {
 
         ref = FirebaseDatabase.getInstance().getReference("clubs/"+LoginPage.Username+"/events");
         awardsListView = (ListView) findViewById(R.id.awardsList);
-        adapter = new UserAdapter(this, R.layout.user_list_item, awardList);
+        adapter = new AwardAdapter(this, R.layout.user_list_item, awardList);
         awardsListView.setAdapter(adapter);
         EditText selectedEvent = findViewById(R.id.SelectedEvent); //Selection identifier at top of page
 
@@ -45,6 +45,7 @@ public class ClubAwardDashboard extends AppCompatActivity {
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Called when loading list
+                String eventname = snapshot.getKey();
                 DatabaseReference results = snapshot.child("results").getRef();
                 results.addChildEventListener(new ChildEventListener() {
                     @Override
@@ -54,8 +55,11 @@ public class ClubAwardDashboard extends AppCompatActivity {
                         Matcher matcher = alphabet.matcher(snapshot.getKey());
                         if(matcher.find()){
                          String name = snapshot.getKey();
-                         String awardName = snapshot.getValue(String.class);
-                         awardList.add(new Userlistitem(name, awardName));
+                         String[] details = snapshot.getValue(String.class).split(",");
+                         String awardName = details[0];
+                         String awardDesc = details[1];
+                         String place = details[2];
+                         awardList.add(new awardlistitem(name, awardName, awardDesc, place, eventname));
                          adapter.notifyDataSetChanged();
                         }
 
