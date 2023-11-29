@@ -85,7 +85,7 @@
 
     <string name="name_word">Name</string>
     <string name="add_new_event_type">Add New Event Type</string>
-    <string name="welcome_back">Welcome Back</string>
+    <string name="welcome_back">Welcome Back!</string>
     <string name="create_account">Create Account</string>
     <string name="location">Location</string>
     <string name="diff_lvl">Difficulty Level</string>
@@ -102,7 +102,7 @@
     <string name="event_types">Event Types</string>
     <string name="create_event">Create Event</string>
     <string name="create_evnt_text">Create an event!</string>
-    <string name="admin_dash">Admin Dashboard</string>
+    <string name="admin_dash">Admin Dashboard!</string>
     <string name="welcome_to">Welcome to the</string>
     <string name="manage_usrs">Manage Users</string>
     <string name="manage_evnts">Manage Events</string>
@@ -133,6 +133,9 @@
     <string name="award_details">Award Details</string>
     <string name="club_owner_dash">Club Owner Dashboard!</string>
     <string name="sign_up">Sign Up!</string>
+    <string name="participant_username">Participant Username</string>
+    <string name="place_fin">Place Finished</string>
+    <string name="login_page_msg">Log back into your account! </string>
 
 
 
