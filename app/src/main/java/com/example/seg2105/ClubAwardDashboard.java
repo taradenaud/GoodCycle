@@ -17,12 +17,14 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ClubAwardDashboard extends AppCompatActivity {
 
     private ListView awardsListView;
-    private List<awardlistitem> awardList = new ArrayList<>();
-    private AwardAdapter adapter;
+    private List<Userlistitem> awardList = new ArrayList<Userlistitem>();
+    private UserAdapter adapter;
     private DatabaseReference ref;
 
     private String Selected;
@@ -32,8 +34,9 @@ public class ClubAwardDashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.club_award_dashboard);
 
-        ref = FirebaseDatabase.getInstance().getReference("awards");
-        adapter = new AwardAdapter(this, R.layout.award_list_item, awardList);
+        ref = FirebaseDatabase.getInstance().getReference("clubs/"+LoginPage.Username+"/events");
+        awardsListView = (ListView) findViewById(R.id.awardsList);
+        adapter = new UserAdapter(this, R.layout.user_list_item, awardList);
         awardsListView.setAdapter(adapter);
         EditText selectedEvent = findViewById(R.id.SelectedEvent); //Selection identifier at top of page
 
@@ -42,43 +45,56 @@ public class ClubAwardDashboard extends AppCompatActivity {
 
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Called when loading list
-                String name = snapshot.child("name").getValue(String.class);
-                String awardName = snapshot.child("awardName").getValue(String.class);
-                String awardDetails = snapshot.child("awardDetails").getValue(String.class);
-                String results = snapshot.child("results").getValue(String.class);
+                DatabaseReference results = snapshot.child("results").getRef();
+                results.addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        Pattern alphabet = Pattern.compile("[A-Za-z]");
 
-                awardList.add(new awardlistitem(name, awardName, awardDetails, results));
-                adapter.notifyDataSetChanged();
+                        Matcher matcher = alphabet.matcher(snapshot.getKey());
+                        if(matcher.find()){
+                         String name = snapshot.getKey();
+                         String awardName = snapshot.getValue(String.class);
+                         awardList.add(new Userlistitem(name, awardName));
+                         adapter.notifyDataSetChanged();
+                        }
 
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
 
             @Override
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Refresh list as something was changed
-                if (awardList.size() > 0) {
-                    awardList.clear();
-                }
-                String name = snapshot.child("name").getValue(String.class);
-                String awardName = snapshot.child("awardName").getValue(String.class);
-                String awardDetails = snapshot.child("awardDetails").getValue(String.class);
-                String results = snapshot.child("results").getValue(String.class);
 
-                awardList.add(new awardlistitem(name, awardName, awardDetails, results));
-                adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) { //Something is Deleted from Database, all that needs to happen is remove deleted item from arraylist of users
-                for (int i = 0; i < awardList.size(); i++) { //Not efficient needs optimization
-                    if (awardList.get(i).getName().equals(snapshot.child("name").getValue(String.class))) {
-                        awardList.remove(i);
-                    }
-                }
-                adapter.notifyDataSetChanged();
+
             }
 
             @Override
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                adapter.notifyDataSetChanged();
             }
 
             @Override
@@ -105,21 +121,11 @@ public class ClubAwardDashboard extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Retrieve the entered data
-                String results = resultsEditText.getText().toString();
                 String awardName = awardNameEditText.getText().toString();
-                String awardDetails = awardDetailEditText.getText().toString();
 
                 // Create a new AwardListItem object
-                awardlistitem newAward = new awardlistitem(Selected, awardName, awardDetails, results);
 
-                // Push the new award to Firebase or update the existing one
-                if (!Selected.isEmpty()) {
-                    ref.child(Selected).setValue(newAward);
-                } else {
-                    // Handle the case where no event is selected
-                    // For example, push as a new child
-                    ref.push().setValue(newAward);
-                }
+
 
                 // Clear the input fields after saving
                 resultsEditText.setText("");
