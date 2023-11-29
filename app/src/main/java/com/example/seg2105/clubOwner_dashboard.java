@@ -30,13 +30,6 @@ public class clubOwner_dashboard extends AppCompatActivity {
             }
         });
 
-        Button RoutePlanning = (Button) findViewById(R.id.buttonRoutePlanning);
-        RoutePlanning.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent( clubOwner_dashboard.this, eventCreation.class));
-            }
-        });
         Button RegManagement = (Button) findViewById(R.id.buttonRegistrationManagement);
         RegManagement.setOnClickListener(new View.OnClickListener() {
             @Override

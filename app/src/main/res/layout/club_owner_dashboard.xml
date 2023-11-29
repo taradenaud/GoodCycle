@@ -8,10 +8,22 @@
     tools:context=".clubOwner_dashboard">
 
 
+    <Button
+        android:id="@+id/buttonProfilemngmnt"
+        android:layout_width="110dp"
+        android:layout_height="68dp"
+        android:text="@string/edit_profile"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="79dp" />
+
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="355dp"
+        android:layout_height="fill_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,12 +61,6 @@
             android:text="@string/manage_evnts" />
 
         <Button
-            android:id="@+id/buttonRoutePlanning"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/route_planning" />
-
-        <Button
             android:id="@+id/buttonRegistrationManagement"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -79,13 +85,4 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/buttonProfilemngmnt"
-        android:layout_width="113dp"
-        android:layout_height="68dp"
-        android:layout_marginStart="270dp"
-        android:layout_marginBottom="1dp"
-        android:text="@string/edit_profile"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
-        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

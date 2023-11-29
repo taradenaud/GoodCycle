@@ -7,59 +7,74 @@
     tools:context=".ClubAwardDashboard">
 
     <LinearLayout
-        android:layout_width="370dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:gravity="center|center_horizontal|center_vertical"
         android:orientation="vertical"
-        android:gravity="center|center_vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
 
-        <EditText
-            android:id="@+id/SelectedEvent"
+        <Spinner
+            android:id="@+id/eventSelector"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/text_border_1"
-            android:ems="10"
-            android:hint="@string/selected_evnt"
-            android:inputType="text" />
+            android:layout_height="55dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
 
         <ListView
             android:id="@+id/awardsList"
             android:layout_width="match_parent"
-            android:layout_height="367dp" />
-
+            android:layout_height="333dp"
+            android:listSelector="@android:color/holo_blue_light"/>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <EditText
-            android:id="@+id/editTextText"
+            android:id="@+id/participantUserName"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="50dp"
             android:ems="10"
-            android:inputType="text"
-            android:text="Name" />
+            android:hint="Participant Username"
+            android:inputType="text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
 
         <EditText
             android:id="@+id/resultsEditText"
             android:layout_width="match_parent"
-            android:layout_height="37dp"
+            android:layout_height="53dp"
             android:height="50dp"
             android:gravity="top"
             android:hint="@string/evnt_result"
             android:inputType="textMultiLine" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="12dp" />
+
         <EditText
             android:id="@+id/awardNameEditText"
             android:layout_width="match_parent"
-            android:layout_height="33dp"
+            android:layout_height="57dp"
             android:height="50dp"
             android:hint="@string/award_name"
             android:inputType="text" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="11dp" />
 
         <EditText
             android:id="@+id/awardDetailEditText"
@@ -70,6 +85,10 @@
             android:hint="@string/award_details"
             android:inputType="textMultiLine" />
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
         <Button
             android:id="@+id/saveResultsAndAwardsButton"
             android:layout_width="match_parent"
@@ -78,7 +97,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="8dp" />
+            android:layout_height="wrap_content" />
 
         <LinearLayout
             android:layout_width="match_parent"

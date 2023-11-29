@@ -75,6 +75,7 @@ public class ClubProfileEditor extends AppCompatActivity {
                     ContactNumVal.setText("Mandatory Field Please Add a Phone Number");
                     all_good = false;
                 } else{ContactNumVal.setText("");}
+
                 if(all_good == true){
                     DatabaseReference CLUBNAME = database.getReference("clubs/"+LoginPage.Username+"/ClubName");
                     DatabaseReference INSTALINK = database.getReference("clubs/"+LoginPage.Username+"/InstagramLink");
@@ -84,7 +85,10 @@ public class ClubProfileEditor extends AppCompatActivity {
                     CLUBNAME.setValue(clubName.getText().toString());
                     INSTALINK.setValue(InstagramLink.getText().toString());
                     PHONENUM.setValue(ContactNumber.getText().toString());
-                    CONTACTNAME.setValue(ContactName.getText().toString());
+                    if(String.valueOf(ContactName.getText()).trim().length() == 0){
+                        CONTACTNAME.setValue(ContactName.getText().toString());
+                    }
+
                 }
             }
         });

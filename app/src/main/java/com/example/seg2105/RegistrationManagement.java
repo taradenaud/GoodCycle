@@ -141,11 +141,13 @@ public class RegistrationManagement extends AppCompatActivity {
 
                     }
                 });
+                spotsleft.setText("Participant Limit: "+spots);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
+
         });
 
         userlist.setItemsCanFocus(true);
