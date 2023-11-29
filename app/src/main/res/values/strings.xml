@@ -136,6 +136,8 @@
     <string name="participant_username">Participant Username</string>
     <string name="place_fin">Place Finished</string>
     <string name="login_page_msg">Log back into your account! </string>
+    <string name="manage_evnt">Manage your events</string>
+    <string name="edt_profile">Edit your profile!</string>
 
 
 

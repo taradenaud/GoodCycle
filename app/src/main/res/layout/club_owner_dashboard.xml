@@ -7,15 +7,6 @@
     android:layout_height="match_parent"
     tools:context=".clubOwner_dashboard">
 
-
-    <Button
-        android:id="@+id/buttonProfilemngmnt"
-        android:layout_width="110dp"
-        android:layout_height="68dp"
-        android:text="@string/edit_profile"
-        tools:layout_editor_absoluteX="122dp"
-        tools:layout_editor_absoluteY="79dp" />
-
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="355dp"
@@ -29,7 +20,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
 
         <TextView
             android:id="@+id/textView8"
@@ -74,7 +68,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="60dp" />
+            android:layout_height="110dp" />
 
         <Button
             android:id="@+id/backButton"
@@ -84,5 +78,12 @@
             android:text="@string/back" />
 
     </LinearLayout>
-
+    <Button
+        android:id="@+id/buttonProfilemngmnt"
+        android:layout_width="113dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="276dp"
+        android:text="Edit Profile"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="28dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

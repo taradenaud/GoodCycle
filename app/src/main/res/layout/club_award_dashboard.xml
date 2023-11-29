@@ -7,11 +7,9 @@
     tools:context=".ClubAwardDashboard">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="370dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:gravity="center|center_horizontal|center_vertical"
+        android:gravity="center|center_vertical"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,19 +30,23 @@
         <ListView
             android:id="@+id/awardsList"
             android:layout_width="match_parent"
-            android:layout_height="333dp"
+            android:layout_height="270dp"
+            android:background="@drawable/text_border_1"
+            android:padding="10dp"
             android:listSelector="@android:color/holo_blue_light"/>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="12dp" />
 
         <EditText
             android:id="@+id/participantUserName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:ems="10"
-            android:hint="Participant Username"
+            android:hint="@string/participant_username"
+            android:background="@drawable/text_border_1"
+            android:padding="10dp"
             android:inputType="text" />
 
         <Space
@@ -56,9 +58,11 @@
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:height="50dp"
+            android:background="@drawable/text_border_1"
             android:gravity="top"
-            android:hint="@string/evnt_result"
-            android:inputType="textMultiLine" />
+            android:hint="@string/place_fin"
+            android:inputType="textMultiLine"
+            android:padding="10dp" />
 
         <Space
             android:layout_width="match_parent"
@@ -69,6 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="57dp"
             android:height="50dp"
+            android:background="@drawable/text_border_1"
+            android:padding="10dp"
             android:hint="@string/award_name"
             android:inputType="text" />
 
@@ -82,12 +88,14 @@
             android:layout_height="wrap_content"
             android:height="50dp"
             android:gravity="top"
+            android:background="@drawable/text_border_1"
+            android:padding="10dp"
             android:hint="@string/award_details"
             android:inputType="textMultiLine" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="20dp" />
 
         <Button
             android:id="@+id/saveResultsAndAwardsButton"
