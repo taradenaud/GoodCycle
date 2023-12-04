@@ -24,8 +24,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/varela_round_regular"
-            android:text="@string/login_text"
+            android:text="@string/welcome_back"
             android:textSize="48sp" />
+
+        <TextView
+            android:id="@+id/textView11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login_page_msg"
+            android:textSize="20sp" />
 
         <Space
             android:layout_width="match_parent"

@@ -44,12 +44,12 @@
         <TextView
             android:id="@+id/emailValidation"
             android:layout_width="match_parent"
-            android:layout_height="15dp"
+            android:layout_height="wrap_content"
             android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="16dp" />
 
         <EditText
             android:id="@+id/username"
@@ -65,12 +65,12 @@
         <TextView
             android:id="@+id/UsernameValidation"
             android:layout_width="match_parent"
-            android:layout_height="15dp"
+            android:layout_height="wrap_content"
             android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="16dp" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etPasswordLayout"
@@ -94,12 +94,12 @@
         <TextView
             android:id="@+id/passwordValidation"
             android:layout_width="match_parent"
-            android:layout_height="15dp"
+            android:layout_height="wrap_content"
             android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="16dp" />
 
         <Spinner
             android:id="@+id/user_selection_spinner"
@@ -113,7 +113,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="20dp" />
 
         <EditText
             android:id="@+id/clubName"
@@ -127,10 +127,9 @@
             android:padding="10dp"
             android:visibility="invisible" />
 
-
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="20dp" />
 
         <Button
             android:id="@+id/btn_reg"
