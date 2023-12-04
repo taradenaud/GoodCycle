@@ -16,10 +16,17 @@
             android:layout_height="175dp" />
 
         <TextView
-            android:id="@+id/textView11"
+            android:id="@+id/regStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="REGISTRATION STATUS"
             android:textSize="34sp" />
+
+        <Button
+            android:id="@+id/BackButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

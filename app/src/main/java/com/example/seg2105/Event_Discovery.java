@@ -36,6 +36,8 @@ public class Event_Discovery extends AppCompatActivity {
     private Map<String, String> clubsDict;
     private String Club;
     private String Selected;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
