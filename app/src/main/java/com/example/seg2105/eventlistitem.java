@@ -18,7 +18,7 @@ public class eventlistitem {
             this.pace = "Pace: "+pace;
             this.participantLimit = "Participant Limit: "+String.valueOf(participantLimit);
             this.regfee = "Registration Fee: "+regfee;
-            //this.clubusrname = clubusrname;
+            this.clubusrname = ClubusrName;
         }
 
     public String getName() {

@@ -24,12 +24,15 @@
             android:background="@drawable/text_border_1"
             android:ems="10"
             android:hint="@string/selected_evnt"
+            android:autofillHints="Selected Event"
             android:inputType="text" />
 
         <ListView
             android:id="@+id/EventView"
             android:layout_width="match_parent"
-            android:layout_height="242dp">
+            android:layout_height="242dp"
+            android:choiceMode="singleChoice"
+            android:listSelector="@android:color/holo_blue_light">
 
         </ListView>
 
@@ -49,6 +52,7 @@
             android:layout_height="60dp"
             android:ems="10"
             android:hint="@string/new_value"
+            android:autofillHints="@string/new_value"
             android:inputType="text" />
 
         <Space
@@ -64,17 +68,18 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            style="?android:attr/buttonBarStyle"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/deleteEventBtn"
-                android:layout_width="185dp"
+                android:layout_width="184dp"
                 android:layout_height="wrap_content"
                 android:text="@string/delete_evnt" />
 
             <Button
                 android:id="@+id/backButton"
-                android:layout_width="185dp"
+                android:layout_width="182dp"
                 android:layout_height="wrap_content"
                 android:text="@string/back" />
         </LinearLayout>

@@ -1,7 +1,6 @@
 package com.example.seg2105;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -14,7 +13,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,9 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 public class SignUp extends AppCompatActivity {
-
-    private Spinner spinner;
-    private DatabaseReference databaseReference;
     private Boolean all_good = true;
 
     @Override
@@ -32,17 +27,17 @@ public class SignUp extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_up);
         // spinner for user selection in the sign up page
-        spinner = findViewById(R.id.user_selection_spinner); //spinner var set up
+        Spinner userRoleSelect = findViewById(R.id.user_selection_spinner); //spinner var set up
 
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.User_selection, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        spinner.setAdapter(adapter);
+        userRoleSelect.setAdapter(adapter);
         // end of spinner stuff
 
 
-        Button reg = (Button) findViewById(R.id.btn_reg);
+        Button reg = findViewById(R.id.btn_reg);
         EditText emailText = findViewById(R.id.LoginUsername);
         EditText UserName = findViewById(R.id.username);
         EditText pwdText = findViewById(R.id.LoginPassword);
@@ -51,7 +46,7 @@ public class SignUp extends AppCompatActivity {
         TextView pwdTextval =  findViewById(R.id.passwordValidation);
         TextView clubName = findViewById(R.id.clubName);
 
-        Spinner userRoleSelect = (Spinner) findViewById(R.id.user_selection_spinner);
+
 
         userRoleSelect.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -61,7 +56,7 @@ public class SignUp extends AppCompatActivity {
                     clubName.setVisibility(View.VISIBLE);
                 }
                 else{
-                    clubName.setVisibility(View.INVISIBLE);
+                    clubName.setVisibility(View.GONE);
                 }
             }
 
@@ -120,7 +115,7 @@ public class SignUp extends AppCompatActivity {
                     pwdTextval.setText("Please Enter A Pasword");
                     all_good = false;
                 }else{pwdTextval.setText("");}
-                if(all_good == true) {
+                if(all_good) {
                     DatabaseReference newUserNameRef = database.getReference("users/" + username + "/username");
                     DatabaseReference newUserRoleRef = database.getReference("users/" + username + "/role");
                     DatabaseReference newUserEmailRef = database.getReference("users/" + username + "/email");

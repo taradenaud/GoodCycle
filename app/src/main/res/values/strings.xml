@@ -64,6 +64,13 @@
         <item>Participant</item>
     </string-array>
 
+    <string-array name="search_selection">
+        <item>All</item>
+        <item>Event Type</item>
+        <item>Event Name</item>
+        <item>Club Name</item>
+    </string-array>
+
     <string-array name="EventProperties">
         <item>Type</item>
         <item>Level</item>
