@@ -67,12 +67,32 @@ public class Admin_events extends AppCompatActivity {
 
                     @Override
                     public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
+                        String name = snapshot.child("name").getValue(String.class);
+                        String type = snapshot.child("eventtype").getValue(String.class);
+                        String level = snapshot.child("level").getValue(String.class);
+                        String location = snapshot.child("location").getValue(String.class);
+                        String pace = snapshot.child("pace").getValue(String.class);
+                        Integer limit = snapshot.child("participantLimit").getValue(Integer.class);
+                        String fee = snapshot.child("registrationFee").getValue(String.class);
+                        Club = snapshot.getKey();
+                        for (int i = 0; i < ArrayList.size(); i++) {
+                            if(ArrayList.get(i).getName().equals(name)){
+                                ArrayList.remove(i);
+                            }
+                        }
+                        ArrayList.add(new eventlistitem(name, type, location, level, pace, limit, fee, Club));
+                        adapter.notifyDataSetChanged();
                     }
 
                     @Override
                     public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
+                        String name = snapshot.child("name").getValue(String.class);
+                        for (int i = 0; i < ArrayList.size(); i++) {
+                            if(ArrayList.get(i).getName().equals(name)){
+                                ArrayList.remove(i);
+                            }
+                        }
+                        adapter.notifyDataSetChanged();
                     }
 
                     @Override

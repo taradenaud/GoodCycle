@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class participant_dashboard extends AppCompatActivity {
+public class Registration_Status extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.participant_dashboard);
+        setContentView(R.layout.activity_registration_status);
     }
 }

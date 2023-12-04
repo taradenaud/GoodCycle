@@ -44,12 +44,12 @@
         <TextView
             android:id="@+id/emailValidation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="15dp" />
 
         <EditText
             android:id="@+id/username"
@@ -65,33 +65,41 @@
         <TextView
             android:id="@+id/UsernameValidation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="15dp" />
 
-        <EditText
-            android:id="@+id/LoginPassword"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/etPasswordLayout"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:background="@drawable/text_border_1"
-            android:ems="10"
-            android:fontFamily="@font/varela_round_regular"
-            android:hint="@string/LoginPassword"
-            android:inputType="textPassword"
-            android:padding="10dp" />
+            app:hintEnabled="false"
+            app:passwordToggleEnabled="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/LoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/text_border_1"
+                android:hint="Password:"
+                android:fontFamily="@font/varela_round_regular"
+                android:ems="10"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/passwordValidation"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="15dp"
             android:textColor="@android:color/holo_red_dark" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="15dp" />
 
         <Spinner
             android:id="@+id/user_selection_spinner"
@@ -105,7 +113,7 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="15dp" />
 
         <EditText
             android:id="@+id/clubName"
@@ -120,6 +128,9 @@
             android:visibility="invisible" />
 
 
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
 
         <Button
             android:id="@+id/btn_reg"
