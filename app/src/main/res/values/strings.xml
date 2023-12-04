@@ -145,6 +145,7 @@
     <string name="login_page_msg">Log back into your account! </string>
     <string name="manage_evnt">Manage your events</string>
     <string name="edt_profile">Edit your profile!</string>
+    <string name="registration_status">Registration Status</string>
 
 
 </resources>

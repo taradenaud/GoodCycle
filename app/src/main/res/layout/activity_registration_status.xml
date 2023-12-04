@@ -11,16 +11,26 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+
         <Space
             android:layout_width="match_parent"
-            android:layout_height="175dp" />
-
+            android:layout_height="50dp" />
         <TextView
-            android:id="@+id/regStatus"
+            android:id="@+id/textView12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="REGISTRATION STATUS"
+            android:fontFamily="@font/varela_round_regular"
+            android:text="@string/registration_status"
             android:textSize="34sp" />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
+        <ListView
+            android:background="@drawable/text_border_1"
+            android:id="@+id/regStatus"
+            android:layout_width="match_parent"
+            android:layout_height="242dp"/>
 
         <Button
             android:id="@+id/BackButton"

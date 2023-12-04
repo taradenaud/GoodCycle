@@ -1,35 +1,40 @@
 package com.example.seg2105;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
-
+import android.widget.ListView;
+import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Registration_Status extends AppCompatActivity {
 
-    private TextView regStatus;
+    private ListView eventsListView;
+    private List<EventWithStatus> eventList = new ArrayList<>();
+    private EventWithStatusAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_status);
 
-        regStatus = (TextView) findViewById(R.id.regStatus);
+        eventsListView = findViewById(R.id.regStatus);
+        adapter = new EventWithStatusAdapter(this, R.layout.reg_status_list_item, eventList);
+        eventsListView.setAdapter(adapter);
+
         fetchRegistrationStatus();
 
-        Button back = (Button) findViewById(R.id.BackButton);
+        Button back = findViewById(R.id.BackButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish(); // This will navigate back to the previous page
+                finish(); // Navigate back to the previous page
             }
         });
     }
@@ -37,26 +42,26 @@ public class Registration_Status extends AppCompatActivity {
     private void fetchRegistrationStatus() {
         DatabaseReference userRef = FirebaseDatabase.getInstance()
                 .getReference("users")
-                .child(LoginPage.Username)
+                .child(LoginPage.Username) // Replace with the actual user identifier
                 .child("events");
 
         userRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                StringBuilder statusBuilder = new StringBuilder();
-
                 for (DataSnapshot eventSnapshot : dataSnapshot.getChildren()) {
                     String eventName = eventSnapshot.getKey();
                     String status = eventSnapshot.getValue(String.class);
-                    statusBuilder.append(eventName).append(": ").append(status).append("\n");
+                    // Since other event details are not available here, pass null or placeholders
+                    eventList.add(new EventWithStatus(eventName, status));
                 }
-
-                regStatus.setText(statusBuilder.toString());
+                adapter.notifyDataSetChanged();
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                // Handle possible errors
             }
         });
     }
 }
+
