@@ -47,6 +47,16 @@
             android:layout_height="15dp" />
 
         <Button
+            android:id="@+id/clubRatingDashboardBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rate Club" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp" />
+
+        <Button
             android:id="@+id/BackBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

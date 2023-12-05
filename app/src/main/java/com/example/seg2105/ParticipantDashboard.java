@@ -35,6 +35,14 @@ public class ParticipantDashboard extends AppCompatActivity {
             }
         });
 
+        Button clubRate = (Button) findViewById(R.id.clubRatingDashboardBtn);
+        clubRate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent( ParticipantDashboard.this, ClubRatingPage.class));
+            }
+        });
+
         Button back = (Button) findViewById(R.id.BackBtn);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
