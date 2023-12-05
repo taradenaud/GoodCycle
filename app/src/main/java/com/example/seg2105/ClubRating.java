@@ -2,9 +2,9 @@ package com.example.seg2105;
 
 public class ClubRating {
     private String clubName;
-    private String rating; // Assume this is the club rating
+    private float rating; // Assume this is the club rating
 
-    public ClubRating(String clubName, String rating) {
+    public ClubRating(String clubName, float rating) {
         this.clubName = clubName;
         this.rating = rating;
     }
@@ -14,7 +14,7 @@ public class ClubRating {
         return clubName;
     }
 
-    public String getRating() {
+    public float getRating() {
         return rating;
     }
 }
