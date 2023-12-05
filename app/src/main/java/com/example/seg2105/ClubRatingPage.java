@@ -46,7 +46,6 @@ public class ClubRatingPage extends AppCompatActivity {
 
         submitRatingButton = findViewById(R.id.clubRatingBtn);
 
-        clubRatingListView = findViewById(R.id.clubRatingList);
         clubRatingAdapter = new ClubRatingAdapter(this, R.layout.rating_list_item, clubRatingList);
         clubRatingListView.setAdapter(clubRatingAdapter);
 

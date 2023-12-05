@@ -52,6 +52,15 @@ public class clubOwner_dashboard extends AppCompatActivity {
             }
         });
 
+        Button feedback = findViewById(R.id.FeedbackBtn);
+
+        feedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(clubOwner_dashboard.this, Club_Feedback_Review.class));
+            }
+        });
+
         Button back = (Button) findViewById(R.id.backButton);
         back.setOnClickListener(new View.OnClickListener() {
             @Override

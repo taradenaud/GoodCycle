@@ -27,9 +27,13 @@ public class ClubRatingAdapter extends ArrayAdapter<ClubRating> {
 
         TextView nameView = convertView.findViewById(R.id.name);
         RatingBar ratingView = convertView.findViewById(R.id.ratingBar);
+        TextView comments = convertView.findViewById(R.id.comments);
 
-        nameView.setText("Club: " + clubRating.getClubName());
+        nameView.setText(clubRating.getClubName());
         ratingView.setRating(clubRating.getRating());
+        if(clubRating.getComment()!= null){
+            comments.setText(clubRating.getComment());
+        }else {comments.setText("");}
 
         return convertView;
     }
