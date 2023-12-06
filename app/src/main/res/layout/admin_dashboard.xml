@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_dashboard">
+    tools:context=".admin_dashboard"
+    android:background="@drawable/admin_dashboard">
 
     <LinearLayout
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
+        android:padding="20dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center|center_vertical"
@@ -21,14 +23,17 @@
             android:id="@+id/textView8"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/welcome_to" />
+            android:textSize="20sp"
+            android:text="@string/welcome_to"
+            android:textColor="@color/cool_gray_d3"/>
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/admin_dash"
-            android:textSize="34sp" />
+            android:textSize="40sp"
+            android:textColor="@color/cool_gray_d3"/>
 
         <Space
             android:layout_width="match_parent"
@@ -38,19 +43,22 @@
             android:id="@+id/ManageUsrsbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/manage_usr" />
+            android:text="@string/manage_usr"
+            android:backgroundTint="@color/cool_gray_d1"/>
 
         <Button
             android:id="@+id/EventTypesbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/event_types" />
+            android:text="@string/event_types"
+            android:backgroundTint="@color/cool_gray_d1"/>
 
         <Button
             android:id="@+id/Eventsbtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/events" />
+            android:text="@string/events"
+            android:backgroundTint="@color/cool_gray_d1"/>
 
         <Space
             android:layout_width="match_parent"
@@ -60,6 +68,7 @@
             android:id="@+id/backButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/cool_gray"
 
             android:text="@string/back" />
     </LinearLayout>

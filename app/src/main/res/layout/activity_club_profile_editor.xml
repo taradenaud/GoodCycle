@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cambridge_blue_l1"
     tools:context=".ClubProfileEditor">
 
     <LinearLayout
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
+        android:padding="20dp"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center|center_vertical"
@@ -22,16 +24,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/edt_profile"
-            android:textSize="34sp" />
+            android:fontFamily="@font/varela_round_regular"
+            android:textSize="34sp"
+            android:textColor="@color/cambridge_blue_d1" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="59dp" />
+            android:layout_height="50dp" />
 
         <EditText
             android:id="@+id/ClubName"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@drawable/text_border_1"
             android:ems="10"
             android:fontFamily="@font/varela_round_regular"
@@ -45,7 +49,7 @@
         <EditText
             android:id="@+id/InstagramLink"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@drawable/text_border_1"
             android:ems="10"
             android:fontFamily="@font/varela_round_regular"
@@ -65,7 +69,7 @@
         <EditText
             android:id="@+id/ContactNumber"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:ems="10"
             android:hint="@string/phone_num"
             android:inputType="phone"
@@ -86,7 +90,7 @@
         <EditText
             android:id="@+id/ContactName"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
+            android:layout_height="50dp"
             android:background="@drawable/text_border_1"
             android:ems="10"
             android:fontFamily="@font/varela_round_regular"
@@ -99,18 +103,17 @@
 
         <Button
             android:id="@+id/buttonSave"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/cambridge_blue_d1"
             android:text="@string/save_profile_info" />
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="20dp" />
 
         <Button
             android:id="@+id/buttonBack"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/cambridge_blue"
             android:text="@string/back" />
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

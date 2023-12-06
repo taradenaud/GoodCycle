@@ -4,32 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/participant_dashboard"
     tools:context=".ParticipantDashboard">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center|center_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        tools:ignore="ExtraText">
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="190dp" />
+         />
 
         <TextView
             android:id="@+id/Participant_Welcome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/varela_round_regular"
+            android:textColor="@color/light_green_d1"
             android:text="Welcome Insert UserName"
-            android:textSize="34sp" />
+            android:textSize="35sp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="131dp" />
+            android:layout_height="140dp" />
 
         <Button
             android:id="@+id/EventDiscBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_green_d1"
             android:text="Discover Events" />
 
         <Space
@@ -40,6 +50,7 @@
             android:id="@+id/RegistrationStatusBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_green_d1"
             android:text="Registration Status" />
 
         <Space
@@ -50,15 +61,17 @@
             android:id="@+id/clubRatingDashboardBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_green_d1"
             android:text="Rate Club" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="15dp" />
+            android:layout_height="100dp" />
 
         <Button
             android:id="@+id/BackBtn"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
+            android:backgroundTint="@color/light_green_d1"
             android:layout_height="wrap_content"
             android:text="Back" />
     </LinearLayout>

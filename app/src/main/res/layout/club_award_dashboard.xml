@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cambridge_blue_l1"
     tools:context=".ClubAwardDashboard">
 
     <LinearLayout
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
+        android:padding="20dp"
         android:layout_height="wrap_content"
         android:gravity="center|center_vertical"
         android:orientation="vertical"
@@ -17,27 +19,43 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
 
-        <Spinner
-            android:id="@+id/eventSelector"
+        <TextView
+            android:id="@+id/textView18"
             android:layout_width="match_parent"
-            android:layout_height="55dp" />
+            android:layout_height="wrap_content"
+            android:text="Create Awards!"
+            android:fontFamily="@font/varela_round_regular"
+            android:textColor="@color/cambridge_blue_d1"
+            android:textSize="39dp"/>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="10dp" />
+
+        <Spinner
+            android:id="@+id/eventSelector"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@drawable/border_cambridge_blue_d1"
+            android:layout_height="50dp"
+            />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp" />
 
 
         <ListView
             android:id="@+id/awardsList"
             android:layout_width="match_parent"
-            android:layout_height="270dp"
-            android:background="@drawable/text_border_1"
+            android:layout_height="230dp"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:padding="10dp"
             android:listSelector="@android:color/holo_blue_light"/>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="12dp" />
+            android:layout_height="10dp" />
 
         <EditText
             android:id="@+id/participantUserName"
@@ -45,20 +63,20 @@
             android:layout_height="50dp"
             android:ems="10"
             android:hint="@string/participant_username"
-            android:background="@drawable/text_border_1"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:padding="10dp"
             android:inputType="text" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="12dp" />
+            android:layout_height="10dp" />
 
         <EditText
             android:id="@+id/resultsEditText"
             android:layout_width="match_parent"
-            android:layout_height="53dp"
+            android:layout_height="50dp"
             android:height="50dp"
-            android:background="@drawable/text_border_1"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:gravity="top"
             android:hint="@string/place_fin"
             android:inputType="textMultiLine"
@@ -66,21 +84,21 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="12dp" />
+            android:layout_height="10dp" />
 
         <EditText
             android:id="@+id/awardNameEditText"
             android:layout_width="match_parent"
-            android:layout_height="57dp"
+            android:layout_height="50dp"
             android:height="50dp"
-            android:background="@drawable/text_border_1"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:padding="10dp"
             android:hint="@string/award_name"
             android:inputType="text" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="11dp" />
+            android:layout_height="10dp" />
 
         <EditText
             android:id="@+id/awardDetailEditText"
@@ -88,19 +106,20 @@
             android:layout_height="wrap_content"
             android:height="50dp"
             android:gravity="top"
-            android:background="@drawable/text_border_1"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:padding="10dp"
             android:hint="@string/award_details"
             android:inputType="textMultiLine" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
 
         <Button
             android:id="@+id/saveResultsAndAwardsButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="220dp"
+            android:layout_height="50dp"
+            android:backgroundTint="@color/cambridge_blue_d1"
             android:text="@string/save_r_a" />
 
         <Space
@@ -108,7 +127,7 @@
             android:layout_height="wrap_content" />
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
             android:gravity="bottom"
             android:orientation="horizontal">
@@ -116,7 +135,8 @@
             <Button
                 android:id="@+id/backButton"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/cambridge_blue"
                 android:layout_weight="1"
                 android:text="@string/back" />
         </LinearLayout>

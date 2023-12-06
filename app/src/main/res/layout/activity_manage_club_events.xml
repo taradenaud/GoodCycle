@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cambridge_blue_l1"
     tools:context=".ManageClubEvents">
 
     <LinearLayout
-        android:layout_width="370dp"
+        android:layout_width="match_parent"
+        android:padding="20dp"
         android:layout_height="wrap_content"
         android:gravity="center_vertical"
         android:orientation="vertical"
@@ -22,18 +24,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/varela_round_regular"
+            android:textColor="@color/cambridge_blue_d1"
             android:text="@string/manage_evnt"
             android:textSize="34sp" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="30dp" />
+            android:layout_height="10dp" />
 
         <EditText
             android:id="@+id/ClubSelectedEvent"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/text_border_1"
+            android:layout_height="50dp"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:ems="10"
             android:hint="@string/selected_evnt"
             android:padding="10dp"
@@ -41,22 +44,22 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
 
         <ListView
-            android:background="@drawable/text_border_1"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:id="@+id/ClubEventView"
             android:layout_width="match_parent"
-            android:layout_height="242dp">
+            android:layout_height="250dp">
 
         </ListView>
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="20dp" />
+            android:layout_height="10dp" />
         <Spinner
             android:id="@+id/Clubpropertyselect"
-            android:background="@drawable/text_border_1"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:layout_width="match_parent"
             android:padding="10dp"
             android:layout_height="50dp"
@@ -64,13 +67,13 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="12dp" />
+            android:layout_height="10dp" />
 
         <EditText
             android:id="@+id/ClubdetailValue"
             android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:background="@drawable/text_border_1"
+            android:layout_height="50dp"
+            android:background="@drawable/border_cambridge_blue_d1"
             android:ems="10"
             android:padding="10dp"
             android:hint="@string/new_value"
@@ -78,12 +81,13 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="20dp" />
 
         <Button
             android:id="@+id/ClubeditvalueBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="@color/cambridge_blue_d1"
             android:text="@string/change_dtl"
             tools:ignore="VisualLintButtonSize" />
 
@@ -96,6 +100,7 @@
                 android:id="@+id/ClubdeleteEventBtn"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/cambridge_blue_d1"
                 android:text="@string/delete_evnt"
                 tools:ignore="ButtonStyle" />
 
@@ -103,6 +108,7 @@
                 android:id="@+id/backBttn"
                 android:layout_width="185dp"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/cambridge_blue"
                 android:text="@string/back"
                 tools:ignore="ButtonStyle,VisualLintBounds" />
 
