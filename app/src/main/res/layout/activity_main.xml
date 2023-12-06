@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/opening_page"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -19,14 +20,31 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.5">
 
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="282dp"
+            android:layout_height="109dp"
+            android:src="@tools:sample/avatars"
+            app:srcCompat="@drawable/app_logo_white" />
+
+        <Space
+            android:id="@+id/space"
+            android:layout_width="match_parent"
+            android:layout_height="50dp" />
+
         <TextView
             android:id="@+id/app_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/varela_round_regular"
             android:gravity="center"
-            android:text="Cycling App (GC)"
-            android:textSize="48sp" />
+            android:text="GoodCycle"
+            android:textColor="@color/white"
+            android:textSize="55dp" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="55dp" />
 
         <TextView
             android:id="@+id/textView"
@@ -34,23 +52,27 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/noto_serif_regular"
             android:gravity="center"
-            android:text="Welcome" />
+            android:textSize="15dp"
+            android:text="Welcome to GoodCycle, where every ride is a journey waiting to happen!" />
 
         <Space
             android:id="@+id/space"
             android:layout_width="match_parent"
-            android:layout_height="16dp" />
+            android:layout_height="150dp"
+            tools:ignore="DuplicateIds" />
 
         <Button
+            android:backgroundTint="@color/cool_gray_d1"
             android:id="@+id/login_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:text="Log In" />
 
         <Button
+            android:backgroundTint="@color/cool_gray"
             android:id="@+id/sign_up_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
             android:text="Sign Up" />
     </LinearLayout>
 
