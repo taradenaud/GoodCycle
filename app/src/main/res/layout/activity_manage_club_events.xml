@@ -92,21 +92,26 @@
             tools:ignore="VisualLintButtonSize" />
 
         <LinearLayout
-            android:layout_width="370dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/ClubdeleteEventBtn"
-                android:layout_width="185dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/cambridge_blue_d1"
                 android:text="@string/delete_evnt"
                 tools:ignore="ButtonStyle" />
 
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/backBttn"
-                android:layout_width="185dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/cambridge_blue"
                 android:text="@string/back"

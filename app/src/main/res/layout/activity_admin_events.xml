@@ -103,15 +103,20 @@
 
             <Button
                 android:id="@+id/deleteEventBtn"
-                android:layout_width="185dp"
+                android:layout_width="170dp"
                 android:backgroundTint="@color/cool_gray_d1"
                 android:layout_height="wrap_content"
                 android:text="@string/delete_evnt"
                 tools:ignore="ButtonStyle" />
 
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
             <Button
                 android:id="@+id/backButton"
-                android:layout_width="185dp"
+                android:layout_width="170dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/cool_gray"
                 android:text="@string/back"
