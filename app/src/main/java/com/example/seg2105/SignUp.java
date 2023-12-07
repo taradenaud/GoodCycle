@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.sax.RootElement;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -116,21 +117,13 @@ public class SignUp extends AppCompatActivity {
                     all_good = false;
                 }else{pwdTextval.setText("");}
                 if(all_good) {
-                    DatabaseReference newUserNameRef = database.getReference("users/" + username + "/username");
-                    DatabaseReference newUserRoleRef = database.getReference("users/" + username + "/role");
-                    DatabaseReference newUserEmailRef = database.getReference("users/" + username + "/email");
-                    DatabaseReference newUserPasswordRef = database.getReference("users/" + username + "/password");
 
-                    newUserEmailRef.setValue(username);
-                    newUserNameRef.setValue(username);
-                    newUserEmailRef.setValue(String.valueOf(emailText.getText()));
-                    newUserPasswordRef.setValue(String.valueOf(pwdText.getText()));
-                    newUserRoleRef.setValue(role);
-
+                    String emailtext = String.valueOf(emailText.getText());
+                    String password = String.valueOf(pwdText.getText());
                     if(role.equals("Club Owner")){
-                        String ClubName = String.valueOf(clubName.getText());
-                        DatabaseReference clubdetails = database.getReference("clubs/"+username+"/ClubName");
-                        clubdetails.setValue(ClubName);
+                        regAccount(username,emailtext,password,role);
+                    }else{
+                        regAccount(username,emailtext,password,role,clubName.getText().toString());
                     }
 
                     startActivity(new Intent(SignUp.this, LoginPage.class));
@@ -138,4 +131,36 @@ public class SignUp extends AppCompatActivity {
             }
         });
         }
+
+    static protected void regAccount(String username, String emailText,String password,String Role){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference newUserNameRef = database.getReference("users/" + username + "/username");
+        DatabaseReference newUserRoleRef = database.getReference("users/" + username + "/role");
+        DatabaseReference newUserEmailRef = database.getReference("users/" + username + "/email");
+        DatabaseReference newUserPasswordRef = database.getReference("users/" + username + "/password");
+
+        newUserEmailRef.setValue(username);
+        newUserNameRef.setValue(username);
+        newUserEmailRef.setValue(emailText);
+        newUserPasswordRef.setValue(password);
+        newUserRoleRef.setValue(Role);
+
+    }
+
+    static protected void regAccount(String username, String emailText,String password,String Role, String clubname){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference newUserNameRef = database.getReference("users/" + username + "/username");
+        DatabaseReference newUserRoleRef = database.getReference("users/" + username + "/role");
+        DatabaseReference newUserEmailRef = database.getReference("users/" + username + "/email");
+        DatabaseReference newUserPasswordRef = database.getReference("users/" + username + "/password");
+
+        newUserEmailRef.setValue(username);
+        newUserNameRef.setValue(username);
+        newUserEmailRef.setValue(emailText);
+        newUserPasswordRef.setValue(password);
+        newUserRoleRef.setValue(Role);
+        DatabaseReference clubdetails = database.getReference("clubs/"+username+"/ClubName");
+        clubdetails.setValue(clubname);
+    }
 }
+

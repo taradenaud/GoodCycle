@@ -111,10 +111,8 @@ public class ClubRatingPage extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 float rating = ratingBar.getRating();
-                String feedback = String.valueOf(rating)+","+comments.getText().toString();
-                DatabaseReference addedRating = ref.child(selectedClub+"/rating/"+LoginPage.Username);
-
-                addedRating.setValue(feedback);
+                String feedback = comments.getText().toString();
+                rate(rating, feedback, selectedClub);
             }
         });
 
@@ -128,6 +126,13 @@ public class ClubRatingPage extends AppCompatActivity {
         });
     }
 
+    static protected void rate(float rating, String comments,String Club){
+
+        String feedback = String.valueOf(rating)+","+comments;
+        DatabaseReference addedRating = FirebaseDatabase.getInstance().getReference("clubs").child(Club+"/rating/"+LoginPage.Username);
+
+        addedRating.setValue(feedback);
+    }
 
 }
 

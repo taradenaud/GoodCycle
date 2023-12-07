@@ -84,27 +84,28 @@ public class eventCreation extends AppCompatActivity {
                 String rF = String.valueOf(regFee.getText());
                 Integer Pl = Integer.valueOf(String.valueOf(participantLimit.getText()));
 
-
-                FirebaseDatabase database = FirebaseDatabase.getInstance();
-                DatabaseReference eventName = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/name");
-                DatabaseReference eventType = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/eventtype");
-                DatabaseReference Location = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/location");
-                DatabaseReference Level = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/level");
-                DatabaseReference pace = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/pace");
-                DatabaseReference regFee = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/registrationFee");
-                DatabaseReference participantLimit = database.getReference("clubs/"+LoginPage.Username+"/events/"+eN+"/participantLimit");
-
-
-                eventName.setValue(eN);
-                eventType.setValue(eT);
-                Location.setValue(loc);
-                Level.setValue(DL);
-                pace.setValue(p);
-                regFee.setValue(rF);
-                participantLimit.setValue(Pl);
+                CreateEvent(LoginPage.Username, eT,eN, loc,DL, p, rF, Pl);
 
                 finish();
             }
         });
+    }
+    static protected void CreateEvent(String clubname, String eT, String eN, String loc, String DL, String pace, String rF, Integer Pl){
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference eventName = database.getReference("clubs/"+clubname+"/events/"+eN+"/name");
+        DatabaseReference eventType = database.getReference("clubs/"+clubname+"/events/"+eN+"/eventtype");
+        DatabaseReference Location = database.getReference("clubs/"+clubname+"/events/"+eN+"/location");
+        DatabaseReference Level = database.getReference("clubs/"+clubname+"/events/"+eN+"/level");
+        DatabaseReference Pace = database.getReference("clubs/"+clubname+"/events/"+eN+"/pace");
+        DatabaseReference regFee = database.getReference("clubs/"+clubname+"/events/"+eN+"/registrationFee");
+        DatabaseReference participantLimit = database.getReference("clubs/"+clubname+"/events/"+eN+"/participantLimit");
+
+        eventName.setValue(eN);
+        eventType.setValue(eT);
+        Location.setValue(loc);
+        Level.setValue(DL);
+        Pace.setValue(pace);
+        regFee.setValue(rF);
+        participantLimit.setValue(Pl);
     }
 }

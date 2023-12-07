@@ -98,7 +98,7 @@ public class AdminManageUsers extends AppCompatActivity {
         DeleteUsr.setOnClickListener(new View.OnClickListener() { //delete button functionality
             @Override
             public void onClick(View v) {
-                ref.child(Selected).removeValue();
+                delete(Selected);
             }
         });
 
@@ -113,4 +113,7 @@ public class AdminManageUsers extends AppCompatActivity {
 
     }
 
+    static protected void delete(String username){
+        FirebaseDatabase.getInstance().getReference("users").child(username).removeValue();
+    }
 }

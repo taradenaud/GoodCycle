@@ -18,6 +18,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -49,10 +50,6 @@ public class AdminEventTypes extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {//Called when loading list
                 String type = snapshot.child("name").getValue(String.class);
                 String count = snapshot.getKey();
-                int newCount = Integer.valueOf(count.replace("type", "").trim());
-                if(newCount >= TypeCount){
-                    TypeCount = newCount;
-                }
                 ArrayList.add(type);
                 adapter.notifyDataSetChanged();
             }
@@ -117,26 +114,17 @@ public class AdminEventTypes extends AppCompatActivity {
         renameType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                for(int i =0; i<ArrayList.size(); i++){
-                    if(ArrayList.get(i).equals(CurrentName)){
-                        DatabaseReference renameref = database.getReference("eventtypes/"+ "type"+(i+1));
-                        String updatedName = String.valueOf(newname.getText());
-                        renameref.child("name").setValue(updatedName);
-                    }
-                }
+                AlterEventType(CurrentName , String.valueOf(newname.getText()));
             }
         });
-
+        EditText newtype = (EditText) findViewById(R.id.NewTypeText);
         FloatingActionButton AddType = (FloatingActionButton) findViewById(R.id.AddTypeButton);
 
         AddType.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText newtype = (EditText) findViewById(R.id.NewTypeText);
                 String name = String.valueOf(newtype.getText());
-                DatabaseReference newTypeNameRef = database.getReference("eventtypes/"+"type"+ (TypeCount+1)+"/name");
-                newTypeNameRef.setValue(name);
-                newtype.setText("Add New Event Type");
+                AddEventType(name);
             }
         });
         Button backButton = findViewById(R.id.backButton);
@@ -147,5 +135,52 @@ public class AdminEventTypes extends AppCompatActivity {
             }
         });
 
+    }
+
+    static protected void AddEventType(String name){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("eventtypes");
+        final Integer[] TypeCount = new Integer[1];
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int count = 0;
+                for (DataSnapshot eventtype : snapshot.getChildren()) {
+
+                    int newCount = Integer.valueOf(eventtype.getValue(String.class).replace("type", "").trim());
+                    if(newCount >= count){
+                        count = newCount;
+                    }
+                }
+                TypeCount[0] = count;
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        DatabaseReference newTypeNameRef = ref.child("type"+ (TypeCount[0] +1)+"/name");
+        newTypeNameRef.setValue(name);
+    }
+    static protected void AlterEventType(String Name, String newName){
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference("eventtypes");
+        ref.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot type: snapshot.getChildren()) {
+                    String Type = type.child("name").getValue(String.class);
+                    if(Type.equals(Name)){
+                        DatabaseReference ref2 = type.getRef();
+                        ref2.setValue(newName);
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }

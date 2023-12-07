@@ -145,13 +145,14 @@ public class Admin_events extends AppCompatActivity {
 
         //WORKS
         Spinner propertySelect = (Spinner) findViewById(R.id.propertyselect);
-
         String[] entries = getResources().getStringArray(R.array.event_properties_entries);
         String[] values = getResources().getStringArray(R.array.event_properties_values);
+
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, entries);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         propertySelect.setAdapter(adapter);
         EditText NewDetailValue = (EditText) findViewById(R.id.detailValue);
+
         //WORKS
 
         //NEEDS FIXING?
@@ -166,8 +167,7 @@ public class Admin_events extends AppCompatActivity {
                     }
                 }
                 ValueToChange = values[count];
-                DatabaseReference changedDetailRef = ref.getDatabase().getReference("clubs/"+Club+"/events/" + Selected + "/" + ValueToChange);
-                changedDetailRef.setValue(String.valueOf(NewDetailValue.getText()));
+                changeEventDetail(Club, Selected, ValueToChange, String.valueOf(NewDetailValue.getText()));
             }
         });
 
@@ -176,7 +176,7 @@ public class Admin_events extends AppCompatActivity {
         deleteEvent.setOnClickListener(new View.OnClickListener() { //delete button functionality
             @Override
             public void onClick(View v) {
-                ref.child(Club).child("events").child(Selected).removeValue();
+                deleteEvent(Club,Selected);
             }
         });
 
@@ -188,5 +188,14 @@ public class Admin_events extends AppCompatActivity {
                 finish(); // This will navigate back to the previous page
             }
         });
+    }
+
+    static protected void deleteEvent(String club, String event){
+        FirebaseDatabase.getInstance().getReference("clubs").child(club).child("events").child(event).removeValue();
+    }
+
+    static protected void changeEventDetail(String club, String event, String detail, String value){
+        DatabaseReference changedDetailRef = FirebaseDatabase.getInstance().getReference("clubs/"+club+"/events/" + event + "/" + detail);
+        changedDetailRef.setValue(String.valueOf(value));
     }
 }

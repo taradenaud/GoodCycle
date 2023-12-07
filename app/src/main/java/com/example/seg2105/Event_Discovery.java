@@ -265,13 +265,7 @@ public class Event_Discovery extends AppCompatActivity {
         Register.setOnClickListener(new View.OnClickListener() { //delete button functionality
             @Override
             public void onClick(View v) {
-                DatabaseReference eventStatus = db.getReference("users/"+LoginPage.Username+"/events/"+Selected);
-                eventStatus.setValue("Pending");
-                DatabaseReference eventUpdate = db.getReference("clubs/"+Club+"/events/"+Selected+"/participants/"+LoginPage.Username);
-                DataSnapshot exists = eventUpdate.get().getResult();
-                if(!exists.exists()){
-                    eventUpdate.setValue("Pending");
-                }
+                Register(Club, LoginPage.Username, Selected);
             }
         });
 
@@ -283,5 +277,15 @@ public class Event_Discovery extends AppCompatActivity {
                 finish(); // This will navigate back to the previous page
             }
         });
+    }
+
+    static protected void Register(String Club, String Username, String event){
+        DatabaseReference eventStatus = FirebaseDatabase.getInstance().getReference("users/"+Username+"/events/"+event);
+        eventStatus.setValue("Pending");
+        DatabaseReference eventUpdate = FirebaseDatabase.getInstance().getReference("clubs/"+Club+"/events/"+event+"/participants/"+Username);
+        DataSnapshot exists = eventUpdate.get().getResult();
+        if(!exists.exists()){
+            eventUpdate.setValue("Pending");
+        }
     }
 }
