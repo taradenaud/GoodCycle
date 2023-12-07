@@ -69,11 +69,22 @@ public class RegistrationManagement extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 eventName = events.get(event.getSelectedItemPosition());
+                ref.child(LoginPage.Username+"/events/"+eventName).addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        int Spots = snapshot.child("participantLimit").getValue(Integer.class);
+                        spotsleft.setText("Participant Limit: "+Spots);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
                 ref.child(LoginPage.Username+"/events/"+eventName).addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        spots = snapshot.child("participantLimit").getValue(Integer.class);
-
                         ref.child(LoginPage.Username+"/events/"+eventName+"/participants").addChildEventListener(new ChildEventListener() {
 
                             @Override
@@ -132,7 +143,6 @@ public class RegistrationManagement extends AppCompatActivity {
 
                     }
                 });
-                spotsleft.setText("Participant Limit: "+spots);
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {

@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -267,7 +268,10 @@ public class Event_Discovery extends AppCompatActivity {
                 DatabaseReference eventStatus = db.getReference("users/"+LoginPage.Username+"/events/"+Selected);
                 eventStatus.setValue("Pending");
                 DatabaseReference eventUpdate = db.getReference("clubs/"+Club+"/events/"+Selected+"/participants/"+LoginPage.Username);
-                eventUpdate.setValue("Pending");
+                DataSnapshot exists = eventUpdate.get().getResult();
+                if(!exists.exists()){
+                    eventUpdate.setValue("Pending");
+                }
             }
         });
 

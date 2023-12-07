@@ -117,6 +117,15 @@ public class ClubRatingPage extends AppCompatActivity {
                 addedRating.setValue(feedback);
             }
         });
+
+        Button back = (Button) findViewById(R.id.backButton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish(); // This will navigate back to the previous page
+            }
+        });
     }
 
 

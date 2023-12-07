@@ -17,7 +17,6 @@ public class ParticipantDashboard extends AppCompatActivity {
 
         TextView welcome = (TextView) findViewById(R.id.Participant_Welcome);
 
-        welcome.setText("Welcome " + LoginPage.Username);
 
         Button Discover = (Button) findViewById(R.id.EventDiscBtn);
         Discover.setOnClickListener(new View.OnClickListener() {
